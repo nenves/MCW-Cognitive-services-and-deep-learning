@@ -5,7 +5,9 @@
 
 1.  Microsoft Azure subscription must be pay-as-you-go or MSDN
 
-    a.  Trial subscriptions will not work
+    a.  Trial subscriptions will not work. You will run into issues with Azure resource quota limits.
+
+    b.  Subscriptions with access limited to a single resource group will not work. You will need the ability to deploy multiple resource groups.
 
 ## Before the hands-on lab
 
@@ -13,15 +15,15 @@ Duration: 30 minutes
 
 To maximize your lab time, the following steps which setup your environment should be performed before attending the lab.
 
-#### Task 1: Provision the Windows Data Science Virtual Machine
+#### Task 1: Provision the Windows Virtual Machine
 
 1.  Navigate to the Azure Portal at <https://portal.azure.com>.
 
 2.  Select **Create a resource**.\
     ![Screenshot of the Create a resource button.](images/Setup/image3.png "Create a resource button")
 
-3.  Select **AI + Cognitive Services** and then select **Data Science Virtual Machine Windows 2016**.\
-    ![In the New blade, both AI + Cognitive Services and Data Science Virtual Machine Windows 2016 are selected.](images/Setup/image4.png "New blade")
+3.  Select **Compute** and then select **Windows Server 2016 Datacenter**.\
+    ![In the New blade, Compute is selected.](images/Setup/image4.png "New blade")
 
 4.  On the **Basics** blade provide the following inputs:
 
@@ -43,9 +45,7 @@ To maximize your lab time, the following steps which setup your environment shou
 
 5.  Select **OK**.
 
-6.  On the **Choose a size** blade, select **NC6 Standard** and choose **Select.**
-
-    ![In the Choose a size blade, the NC6 Standard option is selected.](images/Setup/image6.png "Choose a size blade")
+6.  On the **Choose a size** blade, select **D4s_v3** and choose **Select.**
 
 7.  Leave all values on the Settings blade at their defaults and select OK.\
     ![Fields in the settings blade are set to the default settings.](images/Setup/image7.png "Settings blade")
@@ -53,11 +53,11 @@ To maximize your lab time, the following steps which setup your environment shou
 8.  On the Create blade, review the summary and then select Create.\
     ![Screenshot of the Create blade.](images/Setup/image8.png "Create blade")
 
-9.  The VM should take 10-15 minutes to provision.
+9.  The VM should take 10 minutes to provision.
 
 #### Task 2: Verify Remote Desktop access to Data Science VM
 
-1.  When the VM is ready, you should see a notification. Select **Go to resource** to view the deployed Data Science VM in the Portal.\
+1.  When the VM is ready, you should see a notification. Select **Go to resource** to view the deployed VM in the Portal.\
     ![The Notification window has the message that Deployment succeeded.](images/Setup/image9.png "Notification window")
 
 2.  On the blade for the VM, select **Connect**. This will download a Remote Desktop (RDP) file.
@@ -75,26 +75,44 @@ To maximize your lab time, the following steps which setup your environment shou
 6.  Select **Connect** on the dialog that follows.\
     ![Screenshot of the Accept certificate and connect dialog box.](images/Setup/image13.png "Accept certificate and connect dialog box")
 
-7.  Within a few moments, you should see the desktop for your new Data Science Virtual Machine.\
-    ![Screenshot of the Data Science Virtual Machine Desktop.](images/Setup/image14.png "Desktop")
+7.  Within a few moments, you should see the desktop for your new Data Science Virtual Machine.
 
 #### Task 3: Initialize Azure Machine Learning Workbench
 
-Before using the Azure Machine Learning Workbench on the Data Science VM, you will need to take the one-time action of double-clicking on the AzureML Workbench Setup icon on the desktop to install your instance of the workbench.
+Before using the Azure Machine Learning Workbench on the VM, you will need to take the one-time action of AzureML Workbench Setup to install your instance of the workbench. 
 
-1.  Within the RDP session to the Data Science VM, on the desktop locate the AzureML Workbench Setup.\
-    ![Screenshot of the AzureML Workbench Setup desktop icon.](images/Setup/image15.png "AzureML Workbench Setup desktop icon")
+1.  Within the RDP session to the VM, open Server Manager.
 
-2.  Double-click the icon to install the Workbench.
+2.  Select Local server.\
+    ![Screenshot showing selecting Local Server within Server Manager.](images/Setup/image14.png "Server Manager")
 
-3.  At the **Open File -- Security Warning** dialog, select **Run**.\
-    ![Screenshot of the Open File - Security Warning dialog box.](images/Setup/image16.png "Open File - Security Warning dialog box")
+3.  In the Properties area, look for IE Enhanced Security Configuration and select On.\
+    ![Screenshot showing the IE Enhanced Configuration link in Server Manager.](images/Setup/image15.png "IE Enhanced Security Configuation set to On")
 
-4.  Step through all the prompts leaving all values at their defaults to complete the Workbench installation. Installation will take about 25 minutes. Use the **X** to close the install when it is finished.
+4.  In the dialog, set both options to Off and select OK.\
+    ![Screenshot showing the Internet Explorer Enhanced Security Configuration dialog box with the Administrators and Users options both set to off.](images/Setup/image19.png "Internet Explorer Enhanced Security Configuration dialog box")
+
+5. Using Internet Explorer on the VM, download the Azure Machine Learning Workbench from:
+https://aka.ms/azureml-wb-msi 
+
+6. At the prompt, choose Save and when finished downloading choose Run.
+
+7.  Step through all the prompts leaving all values at their defaults to complete the Workbench installation. Installation will take about 25 minutes. Use the **X** to close the install when it is finished.
 
     ![The Azure Machine Learning Workbench Installer screen displays the message, Installation successful.](images/Setup/image17.png "Azure Machine Learning Workbench Installer screen")
 
-#### Task 4: Stop the Data Science VM
+8. Next, download Visual Studio Code from the following location:
+https://code.visualstudio.com/download 
+
+9. Select to download the Windows version:\
+    ![Screenshot showing the download tile for the Windows version of Visual Studio Code](images/Setup/image20.png "Download the Windows version")
+    
+10. Save the download and Run it when completed.
+
+11. Step thru the Visual Studio Code installation, leaving all values at their defaults.
+
+
+#### Task 4: Stop the Lab VM
 
 If you are performing this setup the night before the hands-on lab, you can optionally Stop the VM to save on costs overnight, and resume it when you are ready to start on the lab. Follow these steps to Stop the VM:
 

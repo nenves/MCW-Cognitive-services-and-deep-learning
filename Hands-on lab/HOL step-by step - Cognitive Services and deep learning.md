@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-March 2018
+June 2018
 </div>
 
 
@@ -38,12 +38,13 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Exercise 1: Setup Azure Machine Learning accounts](#exercise-1-setup-azure-machine-learning-accounts)
         - [Task 1: Provision Azure Machine Learning Experimentation service](#task-1-provision-azure-machine-learning-experimentation-service)
         - [Task 2: Create the Azure Machine Learning project](#task-2-create-the-azure-machine-learning-project)
-        - [Task 3: Install dependencies](#task-3-install-dependencies)
-    - [Exercise 2: Deploy the Summarizer as a Service](#exercise-2-deploy-the-summarizer-as-a-service)
+    - [Exercise 2: Create and Deploy an Unsupervised Model](#exercise-2-create-and-deploy-an-unsupervised-model)
         - [Task 1: Deploy your ACS cluster](#task-1-deploy-your-acs-cluster)
-        - [Task 2: Set Visual Studio Code as the project IDE in Workbench](#task-2-set-visual-studio-code-as-the-project-ide-in-workbench)
-        - [Task 3: Create the Summarization service](#task-3-create-the-summarization-service)
-        - [Task 4: Deploy the Summarization service](#task-4-deploy-the-summarization-service)
+        - [Task 2: Install dependencies](#task-2-install-dependencies)
+        - [Task 3: Set Visual Studio Code as the project IDE in Workbench](#task-3-set-visual-studio-code-as-the-project-ide-in-workbench)
+        - [Task 4: Create the Summarization service](#task-4-create-the-summarization-service)
+        - [Task 5: Deploy the Summarization service](#task-5-deploy-the-summarization-service)
+        
     - [Exercise 3: Applying TensorFlow](#exercise-3-applying-tensorflow)
         - [Task 1: Prepare TensorFlow](#task-1-prepare-tensorflow)
         - [Task 2: Train and deploy the TensorFlow model](#task-2-train-and-deploy-the-tensorflow-model)
@@ -80,7 +81,7 @@ In this workshop, you will help Contoso Ltd. Build a proof of concept that shows
 
 ## Solution architecture
 
-The high-level architecture of the solution is illustrated in the diagram. The lab is performed within the context of a Jupyter Notebook running within a Data Science VM on Azure. Various notebooks are built to test the integration with the Cognitive Services listed, to train customer ML services and to integrate the results in a simple user interface that shows the result of processing the claim with all of the AI services involved.
+The high-level architecture of the solution is illustrated in the diagram. The lab is performed within the context of a Jupyter Notebook running within a VM on Azure. Various notebooks are built to test the integration with the Cognitive Services listed, to train customer ML services and to integrate the results in a simple user interface that shows the result of processing the claim with all of the AI services involved.
 
 ![The High-level architectural solution begins with a Claim, which points to Jupyter notebook. Jupyter then points to Computer Vision, Text Analytics, and Containerized Services, which includes a Classification Service and a Summary Service that both process claim text.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image2.png "High-level architectural solution")
 
@@ -88,7 +89,9 @@ The high-level architecture of the solution is illustrated in the diagram. The l
 
 1.  Microsoft Azure subscription must be pay-as-you-go or MSDN
 
-    a.  Trial subscriptions will not work
+    a.  Trial subscriptions will not work. You will run into issues with Azure resource quota limits.
+
+    b.  Subscriptions with access limited to a single resource group will not work. You will need the ability to deploy multiple resource groups.
 
 ## Exercise 1: Setup Azure Machine Learning accounts
 
@@ -103,8 +106,8 @@ In this exercise, you will setup your Azure Machine Learning Experimentation and
 2.  Select **Create a resource**.\
     ![Screenshot of the Create a resource button.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image3.png "Create a resource button")
 
-3.  Select **AI + Cognitive Services** and then select **Machine Learning Experimentation**\
-    ![In the New blade, both AI + Cognitive Services and Machine Learning Experimentation are selected.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image19.png "New blade")
+3.  Select **AI + Machine Learning** and then select **Machine Learning Experimentation**\
+    ![In the New blade, AI + Machine Learning is selected.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image19.png "New blade")
 
 4.  On the **ML Experimentation** blade, provide the following:
 
@@ -114,7 +117,7 @@ In this exercise, you will setup your Azure Machine Learning Experimentation and
 
     c.  **Resource group**: select the mcw-ai-lab resource group you previously created.
 
-    d.  **Location**: select the region nearest to where you deployed your Data Science VM. It's OK if they are not in exactly the same region, but try to select a region that is close to minimize latency.
+    d.  **Location**: select the region nearest to where you deployed your lab VM. It's OK if they are not in exactly the same region, but try to select a region that is close to minimize latency.
 
     e.  **Number of seats**: leave at 2.
 
@@ -175,7 +178,61 @@ In this exercise, you will setup your Azure Machine Learning Experimentation and
 10. The template will download, and a few moments you should see the TDSP project dashboard.\
     ![Screenshot of the TDSP project dashboard.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image28.png "TDSP project dashboard")
 
-### Task 3: Install dependencies
+## Exercise 2: Create and Deploy an Unsupervised Model
+
+Duration: 60 minutes
+
+In this exercise you will create and deploy a web service that uses a pre-trained model to summarize long paragraphs of text. 
+
+### Task 1: Deploy your ACS cluster
+
+1.	Navigate to the Azure Portal.
+
+2.	Select All Services, Subscriptions and then select your subscription from the list.
+
+3.	Under the Settings grouping, select Resource Providers.\
+    ![Screenshot of the Settings tabs for a selected subscription in the Azure Portal](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image74.png "Settings")
+ 
+4.	Search for “container” and in the list that appears verify that all resource providers related to containers are registered. If not, select the Register link next to the items that are not registered.
+    ![Screenshot showing the search results for providers with the name container](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image75.png "Search resource providers")
+ 
+5.  Within Workbench, from the **File** menu, select **Open Command Prompt.**
+
+6.  Create the cluster environment by running the following command, replacing the values indicated in angle brackets with appropriate values. This will create new resources groups for the cluster.
+
+    a.  For \<environment name\> enter mcwailabenv, or something similar. This value can only contain lowercase alphanumeric characters.
+
+    b.  For location, use eastus2, westcentralus, australiaeast, westeurope, or southeastasia, as those are the only acceptable values at this time.
+
+        az ml env setup -c -n \<environment name\> \--location \<e.g. eastus2\>
+
+7.  If prompted, copy the URL presented and sign in using your web browser.
+
+8.  Enter the code provided in the command prompt.\
+    ![Screenshot of the Device Login page](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image34.png "Device Login page")
+
+9.  Select **Continue.**\
+    ![The Device Login page now displays the code.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image35.png "Device Login page")
+
+10.  Sign in with your Azure Credentials.\
+    ![The Microsoft Azure sign in page displays.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image36.png "Microsoft Azure sign in page")
+
+11.  Return to the command prompt, which should automatically update after you log in.
+
+12.  At the "Subscription set to \<subscription name\>" prompt, enter **Y** if the subscription name is correct, or **N** to select the subscription to use from a list.\
+    ![In the Command Prompt window, the updates display. At this time, we are unable to capture all of the information in the command prompt window. Future versions of this course should address this.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image37.png "Command prompt window")
+
+9.  It will take 10-20 minutes for your ACS cluster to be ready. You can periodically check on the status by running the command shown in the output to the previous step, which is of the form:\
+
+    ```
+    az ml env show -g <resourceGroupName> -n <clusterName>
+    ```
+
+10. **Continue on with the lab while your ACS cluster provisions**.
+
+
+
+### Task 2: Install dependencies
 
 The tasks that follow depend on Python libraries like nltk and gensim. The following steps ensure you have these installed in your environment.
 
@@ -204,11 +261,13 @@ The tasks that follow depend on Python libraries like nltk and gensim. The follo
     ```
 
 7.  Run the following command to install genism:\
-    pip install gensim\
+    ```
+    pip install gensim
+    ```
     \
     ![In the Command Prompt window, the previous command and its output display. At this time, we are unable to capture all of the information in the command prompt window. Future versions of this course should address this.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image30.png "Command Prompt window")
 
-8.  Next, download a pre-built Jupyter Notebook that you will step through to understand the process used to summarize the text of claims documents. In the **Firefox** browser on your VM, navigate to the following (note that the URL is case sensitive). Note, if using IE you will need to modify the default security settings, which prevent files from being downloaded.\
+8.  Next, download a pre-built Jupyter Notebook that you will step through to understand the process used to summarize the text of claims documents. In the browser on your VM, navigate to the following (note that the URL is case sensitive). Note, if using IE you will need to modify the default security settings, which prevent files from being downloaded.\
     \
     <http://bit.ly/2G4hAQz>
 
@@ -217,7 +276,7 @@ The tasks that follow depend on Python libraries like nltk and gensim. The follo
     \
     ![In the Command Prompt window, the command to launch the Jupyter Notebook displays. At this time, we are unable to capture all of the information in the command prompt window. Future versions of this course should address this.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image31.png "Command Prompt window")
 
-10. In a few moments, you should be prompted for which browser to use to open the link, select **Firefox**.
+10. In a few moments, you should be prompted for which browser to use to open the link.
 
 11. The Jupyter Notebook interface should appear in the browser, listing the contents of your project folder.\
     ![The Jupyter Notebook interface displays the contents of the project folder.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image32.png "Jupyter Notebook interface")
@@ -231,62 +290,7 @@ The tasks that follow depend on Python libraries like nltk and gensim. The follo
 
 15. Open the **Summarize.ipynb** notebook and follow the instructions within it.
 
-## Exercise 2: Deploy the Summarizer as a Service
-
-Duration: 45 minutes
-
-In this exercise you will create and deploy a web service that uses a pre-trained model to summarize long paragraphs of text.
-
-### Task 1: Deploy your ACS cluster
-
-1.  Within Workbench, from the **File** menu, select **Open Command Prompt.**
-
-2.  Create the cluster environment by running the following command, replacing the values indicated in angle brackets with appropriate values. This will create new resources groups for the cluster.
-
-    a.  For \<environment name\> enter mcwailabenv, or something similar. This value can only contain lowercase alphanumeric characters.
-
-    b.  For location, use eastus2, westcentralus, australiaeast, westeurope, or southeastasia, as those are the only acceptable values at this time.
-
-        az ml env setup -c -n \<environment name\> \--location \<e.g. eastus2\>
-
-3.  When prompted, copy the URL presented and sign in using your web browser.
-
-4.  Enter the code provided in the command prompt.\
-    ![Screenshot of the Device Login page](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image34.png "Device Login page")
-
-5.  Select **Continue.**\
-    ![The Device Login page now displays the code.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image35.png "Device Login page")
-
-6.  Sign in with your Azure Credentials.\
-    ![The Microsoft Azure sign in page displays.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image36.png "Microsoft Azure sign in page")
-
-7.  Return to the command prompt, which should automatically update after you log in.
-
-8.  At the "Subscription set to \<subscription name\>" prompt, enter **Y** if the subscription name is correct, or **N** to select the subscription to use from a list.\
-    ![In the Command Prompt window, the updates display. At this time, we are unable to capture all of the information in the command prompt window. Future versions of this course should address this.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image37.png "Command prompt window")
-
-9.  It will take 10-20 minutes for your ACS cluster to be ready. You can periodically check on the status by running the command shown in the output to the previous step, which is of the form:\
-
-    ```
-    az ml env show -g <resourceGroupName> -n <clusterName>
-    ```
-
-10. Once the environment has successfully provisioned (the Provisioning State in the above command will read "Succeeded"), run the other command provided in step 8, which is of the form:\
-    az ml env set -g \<resourceGroupName\> -n \<clusterName\>\
-    \
-    ![In the Command Prompt window, the previous commands and their output display. At this time, we are unable to capture all of the information in the command prompt window. Future versions of this course should address this.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image38.png "Command prompt window")
-
-11. This will set the context of the command line to target this environment.
-
-12. Finally, set the model management account to be used by the command line, to be the one you created previously (mcw-ai-lab-model-mgmt). Run the following command, replacing the values indicated in angle brackets with appropriate values.
-
-    a.  For \<acctname\>, enter the name of the Machine Learning Model Management resource in your mcw-ai-lab resource group.
-
-    b.  For \<resourcegroupname\>, use your mcw-ai-lab resource group name.
-    ```
-    az ml account modelmanagement set -n <acctname> -g <resourcegroupname>
-    ```
-### Task 2: Set Visual Studio Code as the project IDE in Workbench
+### Task 3: Set Visual Studio Code as the project IDE in Workbench
 
 1.  Within Workbench, from the **File** menu, select **Configure Project IDE.**\
     ![In the Workbench File menu, Configure Project IDE is selected.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image39.png "Workbench, File menu")
@@ -305,7 +309,7 @@ In this exercise you will create and deploy a web service that uses a pre-traine
 
 5.  You are now ready to author service script.
 
-### Task 3: Create the Summarization service
+### Task 4: Create the Summarization service
 
 1.  Visual Studio Code will open against the project directory.
 
@@ -331,11 +335,10 @@ In this exercise you will create and deploy a web service that uses a pre-traine
     - python=3.5.2
     - scikit-learn
     - pip:
-
     # The API for Azure Machine Learning Model Management Service.
-
     # Details: https://github.com/Azure/Machine-Learning-Operationalization
     - azure-ml-api-sdk==0.1.0a11
+    - azureml.datacollector==0.1.0a13
     - gensim
     - tensorflow
     - tflearn
@@ -345,17 +348,41 @@ In this exercise you will create and deploy a web service that uses a pre-traine
 
 9.  Next, create an empty file called dummy\_model.bin in the 03\_deployment folder. In this case, we don't have a model to deploy with this service, but we still need to provide one to the CLI as we will see in a moment. An empty file will do.
 
-### Task 4: Deploy the Summarization service
+### Task 5: Deploy the Summarization service
 
-1.  Return to the Workbench and use the **File** menu to open another command prompt.
+1. Return to the Workbench and use the File menu to open another command prompt.
 
-2.  At the command prompt, change directories to the code\\03\_deployment directory by executing the following command:
+2. Wait for your ACS cluster to be ready. You can periodically check on the status by running the command shown in the output to the previous step, which is of the form:
+
+    ```
+    az ml env show -g <resourceGroupName> -n <clusterName>
+    ```
+
+3. Once the environment has successfully provisioned (the Provisioning State in the above command will read "Succeeded"), set your default environment with a command of the form:
+    ```
+    az ml env set -g \<resourceGroupName\> -n \<clusterName\>
+    ```
+    
+    ![In the Command Prompt window, the previous commands and their output display. At this time, we are unable to capture all of the information in the command prompt window. Future versions of this course should address this.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image38.png "Command prompt window")
+
+4. This will set the context of the command line to target this environment.
+
+5. Finally, set the model management account to be used by the command line, to be the one you created previously (mcw-ai-lab-model-mgmt). Run the following command, replacing the values indicated in angle brackets with appropriate values.
+
+    a.  For \<acctname\>, enter the name of the Machine Learning Model Management resource in your mcw-ai-lab resource group.
+
+    b.  For \<resourcegroupname\>, use your mcw-ai-lab resource group name.
+    ```
+    az ml account modelmanagement set -n <acctname> -g <resourcegroupname>
+    ```
+
+6.  At the command prompt, change directories to the code\\03\_deployment directory by executing the following command:
 
     ```
     cd code\03_deployment
     ```
 
-3.  You can deploy the service using a single command (which orchestrates the multiple steps of creating a docker manifest, creating a docker image, and deploying a container instance from the image). The command needs to refer to all the components required for the service including the dummy model file, the service script, the conda dependencies and the runtime to use (python in this case). Run the following command to deploy the summarizer service:\
+7.  You can deploy the service using a single command (which orchestrates the multiple steps of creating a docker manifest, creating a docker image, and deploying a container instance from the image). The command needs to refer to all the components required for the service including the dummy model file, the service script, the conda dependencies and the runtime to use (python in this case). Run the following command to deploy the summarizer service:\
     
     ```
     az ml service create realtime -n summarizer -c ..\..\aml_config\conda_dependencies.yml -m dummy_model.bin -f summarizer_service.py -r python
@@ -363,7 +390,7 @@ In this exercise you will create and deploy a web service that uses a pre-traine
     
     ![In the Command Prompt window, the previous command and its output display. At this time, we are unable to capture all of the information in the command prompt window. Future versions of this course should address this.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image45.png "Command Prompt window")
 
-4.  Notice in the output of the preceding command, you are provided with instructions (third line from last) on how you can invoke the deployed service using the CLI. Try executing the following command (modify the Service ID of you service as indicated in the previous command output):\
+8.  Notice in the output of the preceding command, you are provided with instructions (third line from last) on how you can invoke the deployed service using the CLI. Try executing the following command (modify the Service ID of you service as indicated in the previous command output):\
     
     ```
     az ml service run realtime -i summarizer.[mcwailab-xyz.location] -d "I was driving down El Camino and stopped at a red light. It was about 3pm in the afternoon. The sun was bright and shining just behind the stoplight. This made it hard to see the lights. There was a car on my left in the left turn lane. A few moments later another car, a black sedan pulled up behind me. When the left turn light changed green, the black sedan hit me thinking that the light had changed for us, but I had not moved because the light was still red. After hitting my car, the black sedan backed up and then sped past me. I did manage to catch its license plate. The license plate of the black sedan was ABC123."
@@ -371,15 +398,15 @@ In this exercise you will create and deploy a web service that uses a pre-traine
 
     ![In the Command Prompt window, the previous text displays.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image46.png "Command Prompt window")
 
-5.  If you get a summary back, your service is working! Try calling the service with other text and observe the summary returned. Note that the service tries to build a summary of about 30 words, so if you provide too short a text, an empty summary will be returned.
+9.  If you get a summary back, your service is working! Try calling the service with other text and observe the summary returned. Note that the service tries to build a summary of about 30 words, so if you provide too short a text, an empty summary will be returned.
 
-6.  Finally, in a notepad or other location take note of the full Service ID (e.g., summarizer.mcwailab-xyz.location) and the authorization key which you will need later in the lab. To get the authorization key for your deployed service, run the following command and take note of the PrimaryKey value in the output:\
+10.  Finally, in a notepad or other location take note of the full Service ID (e.g., summarizer.mcwailab-xyz.location) and the authorization key which you will need later in the lab. To get the authorization key for your deployed service, run the following command and take note of the PrimaryKey value in the output:
+
+        ```
+        az ml service keys realtime -i summarizer.[mcwailab-xyz.location]
+        ```
     
-    ```
-    az ml service keys realtime -i summarizer.[mcwailab-xyz.location]
-    ```
-    
-    ![In the Command Prompt window, the previous command and its output display. At this time, we are unable to capture all of the information in the command prompt window. Future versions of this course should address this.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image47.png "Command Prompt window")
+        ![In the Command Prompt window, the previous command and its output display. At this time, we are unable to capture all of the information in the command prompt window. Future versions of this course should address this.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image47.png "Command Prompt window")
 
 ## Exercise 3: Applying TensorFlow
 
@@ -389,7 +416,7 @@ In this exercise, you use TensorFlow to construct and train a simple deep neural
 
 ### Task 1: Prepare TensorFlow
 
-1.  Return to your RDP session to the Data Science VM.
+1.  Return to your RDP session to the Lab VM.
 
 2.  Switch to the command prompt that is running the Jupyter Notebook command and press **Control + Break**. This will stop the Jupyter Notebook process while you update TensorFlow.
 
@@ -413,11 +440,11 @@ In this exercise, you use TensorFlow to construct and train a simple deep neural
 
 6.  Run "Jupyter Notebook" to re-start the process.
 
-7.  You should now be ready to use TensorFlow on your Data Science VM.
+7.  You should now be ready to use TensorFlow on your lab VM.
 
 ### Task 2: Train and deploy the TensorFlow model
 
-1.  Return to your RDP session to the Data Science VM.
+1.  Return to your RDP session to the lab VM.
 
 2.  Download the TensorFlow notebook, text analytics helper module and sample data from the following link:\
     \
@@ -501,8 +528,8 @@ In this exercise, you perform the final integration with the Computer Vision API
 
 2.  Select **Create a resource.**
 
-3.  Select **AI + Cognitive Services** and then **Computer Vision API.**\
-    ![In the New blade, both AI + Cognitive Services and Computer Vision API are selected.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image59.png "New blade")
+3.  Select **AI + Machine Learning** and then **Computer Vision API.**\
+    ![In the New blade, the AI + Machine Learning option is selected.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image19.png "New blade")
 
 4.  On the **Create** blade, provide the following:
 
@@ -563,7 +590,7 @@ In this exercise, you perform the final integration with the Computer Vision API
 
 ### Task 3: Completing the solution
 
-1.  Return to your RDP session to the Data Science VM.
+1.  Return to your RDP session to the lab VM.
 
 2.  Download the starter files for this task from:\
     \

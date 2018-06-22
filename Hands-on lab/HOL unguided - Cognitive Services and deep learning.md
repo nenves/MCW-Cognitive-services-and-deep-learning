@@ -9,7 +9,7 @@ Hands-on lab unguided
 </div>
 
 <div class="MCWHeader3">
-March 2018
+June 2018
 </div>
 
 
@@ -101,7 +101,7 @@ In this workshop you will help Contoso Ltd. Build a proof of concept that shows 
 
 ## Solution architecture
 
-The high-level architecture of the solution is illustrated in the diagram. The lab is performed within the context of a Jupyter Notebook running within a Data Science VM on Azure. Various notebooks are built to test the integration with the Cognitive Services listed, to train customer ML services and to integrate the results in a simple user interface that shows the result of processing the claim with all of the AI services involved.
+The high-level architecture of the solution is illustrated in the diagram. The lab is performed within the context of a Jupyter Notebook running within a VM on Azure. Various notebooks are built to test the integration with the Cognitive Services listed, to train customer ML services and to integrate the results in a simple user interface that shows the result of processing the claim with all of the AI services involved.
 
 ![The High-level architectural solution begins with a Claim, which points to Jupyter notebook. Jupyter then points to Computer Vision, Text Analytics, and Containerized Services, which includes a Classification Service and a Summary Service that both process claim text.](images/Hands-onlabunguided-CognitiveServicesanddeeplearningimages/media/image2.png "High-level architectural solution")
 
@@ -109,7 +109,9 @@ The high-level architecture of the solution is illustrated in the diagram. The l
 
 1.  Microsoft Azure subscription must be pay-as-you-go or MSDN
 
-    a.  Trial subscriptions will not work
+    a.  Trial subscriptions will not work. You will run into issues with Azure resource quota limits.
+
+    b.  Subscriptions with access limited to a single resource group will not work. You will need the ability to deploy multiple resource groups.
 
 
 ## Exercise 1: Setup Azure Machine Learning accounts
@@ -133,7 +135,7 @@ In this exercise, you will setup your Azure Machine Learning Experimentation and
 
 #### Tasks to complete
 
-1.  Log in to your Data Science VM via RDP
+1.  Log in to your lab VM via RDP
 
 2.  Launch the Azure Machine Learning Workbench
 
@@ -292,7 +294,7 @@ In this exercise, you use TensorFlow to construct and train a simple deep neural
 
 #### Tasks to complete
 
-1.  Within your RDP session to the Data Science VM, switch to the command prompt that is running the Jupyter Notebook command and press **Control + Break**. This will stop the jupyter notebook process while you update TensorFlow.
+1.  Within your RDP session to the lab VM, switch to the command prompt that is running the Jupyter Notebook command and press **Control + Break**. This will stop the jupyter notebook process while you update TensorFlow.
 
 2.  Use the pip command to install tensorflow.
 
