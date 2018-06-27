@@ -167,7 +167,7 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 In this workshop, you will learn to combine both pre-built artificial intelligence (AI) (in the form of various Cognitive Services) with custom AI (in the form of services built and deployed with Azure Machine Learning services). You will learn to create intelligent solutions atop unstructured text data by designing and implementing a text analytics pipeline. You will also learn how to build a binary classifier using a simple neural network that can be used to classify the textual data. Also, you will learn how to deploy multiple kinds of predictive services using Azure Machine Learning and learn to integrate with the Computer Vision API and the Text Analytics API from Cognitive Services.
 
-Along the way, you will get to consider the following technologies and services:
+Along the way, you will also learn about the following technologies and services:
 
 -   Azure Machine Learning services
 
@@ -446,26 +446,26 @@ Once all claim processing has completed, one final Azure Function could be used 
 
 _Classifying claim text data_
 
-1.  What is the general pipeline for approaching the training of text analytic models such as this? What are the general steps you need to take to prepare the text data for performing tasks like classification?\
-    \
-    ![In the high-level steps for traning a classification model with text diagram, Document labels points to Supervised ML or DL Algorithm, which points to Classification Model. Documents points to Text Normalization, which points to Feature Extraction, which points to Supervised ML or DL Algorithm.](images/Whiteboarddesignsessiontrainerguide-CognitiveServicesanddeeplearningimages/media/image6.png "High-level steps for traning a classification model with text")\
-    \
+1.  What is the general pipeline for approaching the training of text analytic models such as this? What are the general steps you need to take to prepare the text data for performing tasks like classification?
+
+    ![In the high-level steps for traning a classification model with text diagram, Document labels points to Supervised ML or DL Algorithm, which points to Classification Model. Documents points to Text Normalization, which points to Feature Extraction, which points to Supervised ML or DL Algorithm.](images/Whiteboarddesignsessiontrainerguide-CognitiveServicesanddeeplearningimages/media/image6.png "High-level steps for traning a classification model with text")
+    
     As the above diagram illustrates, the general pipeline begins by pre-processing or normalizing the text. This step typically includes tasks such as breaking the text into sentence and word tokens, standardizing the spelling of words, and removing overly common words (called stop words). The output of this phase is typically a multi-dimensional array consisting of an array of documents, each having an array of sentences, with each sentence having its own array of words. The next step is feature extraction, which creates a numeric representation of the textual documents. During feature extraction, a "vocabulary" of unique words is identified, and each word becomes a column in the output. Each row represents a document. The value in each cell is typically a measure of the relative importance of that word in the document, where if a word from the vocabulary does not appear, then that cell has a zero value in that column. This approach enables machine learning algorithms, which operate against arrays of numbers, to also operate against text. Deep learning algorithms operate on tensors, which are also vectors (or arrays of numbers), so this approach is also valid for preparing text for use with a deep learning algorithm.
 
-2.  What data would they need to train the model?\
-    \
+2.  What data would they need to train the model?
+
     Contoso would need to have a certain amount of historical claim text and have it labeled as home or auto to train a model.
 
-3.  Contoso understands they should use a classification algorithm for this problem. They have asked if a Deep Neural Network could be trained against the text to recognize home or auto classifications? Could they use a DNN for this?\
-    \
+3.  Contoso understands they should use a classification algorithm for this problem. They have asked if a Deep Neural Network could be trained against the text to recognize home or auto classifications? Could they use a DNN for this?
+
     Yes, they could build a DNN that performs classification against the document tensors (or vectors of word frequencies).
 
-4.  For this scenario, Contoso has indicated an interest in using TensorFlow, but is concerned about the complexity of jumping right in. They are wondering if TFLearn would provide an easier framework they could use as a stepping stone to the full-blown TensorFlow, which would enable them to build TensorFlow compatible models so that they can "graduate" to using TensorFlow when the team is ready.\
-    \
+4.  For this scenario, Contoso has indicated an interest in using TensorFlow, but is concerned about the complexity of jumping right in. They are wondering if TFLearn would provide an easier framework they could use as a stepping stone to the full-blown TensorFlow, which would enable them to build TensorFlow compatible models so that they can "graduate" to using TensorFlow when the team is ready.
+
     TensorFlow is a robust framework for performing machine learning, including building neural networks. The TFLearn library builds upon Tensorflow and provides an easy-to-use and understand high-level API for implementing deep neural networks, complete with tutorials and examples. Models built with TFLearn are TensorFlow models, so if they choose to move fully towards the lower level TensorFlow API's, then they could do so without having to re-create the models.
 
-5.  What would a very simple DNN that performs this classification look like? Sketch the graph of input nodes, hidden layer nodes, and output nodes.\
-    \
+5.  What would a very simple DNN that performs this classification look like? Sketch the graph of input nodes, hidden layer nodes, and output nodes.
+
     ![Input of terms (size of vocab) nodes point to hidden layers nodes, which point to output layer (binary classifier has two outputs) nodes: 1 (auto), and 0 (home).](images/Whiteboarddesignsessiontrainerguide-CognitiveServicesanddeeplearningimages/media/image7.png "Graph of input nodes, hidden layer nodes, and output nodes")
 
 6.  Assuming they will be using a fully connected DNN with a softmax activation function to train the classifier using a regression and TFLearn, pseudo code the code you would write to construct the network you just illustrated.
@@ -482,14 +482,15 @@ _Classifying claim text data_
     net = tflearn.regression(net)
     ```
 
-7.  Next, pseudo code how they would construct the DNN from the network and fit the model to the vectorized data and the labels.\
-    
+7.  Next, pseudo code how they would construct the DNN from the network and fit the model to the vectorized data and the labels.
+
     ```
     model = tflearn.DNN(net)
     model.fit(data, labels, ...)
     ```
 
-8.  With the trained model in hand, pseudo code how the model would be used to predict the class of a given claim text. What would the output of the prediction be? How would you interpret the value?\
+8.  With the trained model in hand, pseudo code how the model would be used to predict the class of a given claim text. What would the output of the prediction be? How would you interpret the value?
+
     ```
     test_claim = ['I crashed my car into a pole.']
 
@@ -498,24 +499,25 @@ _Classifying claim text data_
     test_claim = extract_features(test_claim)
     pred = model.predict(test_claim)
     ```
- The output of pred is an array of the confidence that label is a 0 or a 1. For example:\
+ The output of pred is an array of the confidence that label is a 0 or a 1. For example:
+ 
     ```
     array([ [0.22, 0.78] ])
     ```
  Could be interpreted to indicate that a prediction of 1 ("auto insurance claim") with a confidence of 78%.
 
-9.  Describe at a high level, how you would deploy this trained model so it is available as a web service that can be integrated with the rest of the solution? What Azure Service(s) would be involved?\
-    \
+9.  Describe at a high level, how you would deploy this trained model so it is available as a web service that can be integrated with the rest of the solution? What Azure Service(s) would be involved?
+
     The trained model is saved to a file. Then this file is loaded by web service code that re-creates the DNN and loads the model weights. The web service code can then run classifications using the model. It is important to note that any text provided to the model for classification must still be processed by the normalize and extract features routines, as was done when training the model. You could deploy this service using Azure Machine Learning service, which would capture the web service in a container, and then deploy the container to Azure Container Service where it can be invoked by any REST client.
 
 _Identifying free-text sentiment_
 
-1.  How would you recommend Contoso identify the sentiment in the free-response text provided associated with a claim? Would this require you to build a custom AI model is there a pre-built AI service you could use?\
-    \
+1.  How would you recommend Contoso identify the sentiment in the free-response text provided associated with a claim? Would this require you to build a custom AI model is there a pre-built AI service you could use?
+
     Contoso should use the Text Analytics API from Cognitive Services for scoring the sentiment of the claim text. By doing so, they would not have to build or train a custom model, nor have the requirement of having the data to do so.
 
-2.  For the solution you propose, what is the range of value of the sentiment score and how would you interpret that value?\
-    \
+2.  For the solution you propose, what is the range of value of the sentiment score and how would you interpret that value?
+
     The Text Analytics API returns values in the range of 0 to 1. A value closer to 0 is interpreted as strongly negative sentiment, near 0.5 as neutral sentiment and closer to 1 as strongly positive sentiment.
 
 _Summarizing claim text_
@@ -526,15 +528,15 @@ _Summarizing claim text_
 
 _Captions, tags and "reading" images_
 
-1.  How would you recommend Contoso implement support for automatically creating captions for the claim photos? Similarly, how would they automatically generate tags? Would this require you to build a custom AI model is there a pre-built AI service you could use?\
-    \
+1.  How would you recommend Contoso implement support for automatically creating captions for the claim photos? Similarly, how would they automatically generate tags? Would this require you to build a custom AI model is there a pre-built AI service you could use?
+
     For both creating captions and the generation of tags, Contoso should use the analyze feature of the Computer Vision API from Cognitive Services.
 
-2.  Describe the flow of processing of an image as input; to what value is returned by each component in your proposed solution for captioning and tagging images?\
-    \
+2.  Describe the flow of processing of an image as input; to what value is returned by each component in your proposed solution for captioning and tagging images?
+
     When using the Computer Vision API, either the binary image data or a URL pointing to a publicly accessible image can be supplied. The return value of Computer Vision API is a JSON document that includes the requested fields (such as captions and tags).
 
- An example of such as JSON response document is as follows:\
+ An example of such as JSON response document is as follows:
  
     ```
     
@@ -561,16 +563,16 @@ _Captions, tags and "reading" images_
     {'confidence': 0.16133838891983032, 'name': 'trailer'}]} 
 
     ```
-3.  How would you recommend Contoso implement support for "reading" any text that appears within an image, so it could be searched later? Would this require you to build a custom AI model? Is there a pre-built AI service you could use?\
-    \
+3.  How would you recommend Contoso implement support for "reading" any text that appears within an image, so it could be searched later? Would this require you to build a custom AI model? Is there a pre-built AI service you could use?
+
     When attempting to extract text from an image, Contoso could use the OCR feature of the Computer Vision API.
 
-4.  Describe the flow of processing of an image as input, to what value returned by each component in your proposed solution for "reading" images.\
-    \
+4.  Describe the flow of processing of an image as input, to what value returned by each component in your proposed solution for "reading" images.
+
     When using the Computer Vision API, either the binary image data or a URL pointing to a publicly accessible image can be supplied. The return value of Computer Vision API for the OCR feature is a JSON document, which includes a collection of bounding boxes that contain the text recognized from the image.
 
- An example of such as JSON response document is as follows:\
-
+ An example of such as JSON response document is as follows:
+ 
     ```
     {'language': 'en', 
     'orientation': 'Up', 
@@ -585,26 +587,26 @@ _Captions, tags and "reading" images_
 
 _Enabling search_
 
-1.  What service would you recommend Contoso use to enable greater searchability over the claim data, inclusive of the new data fields created by your text processing and image processing components?\
-    \
+1.  What service would you recommend Contoso use to enable greater searchability over the claim data, inclusive of the new data fields created by your text processing and image processing components?
+
     Contoso should use Azure Search to create an Index for the claim data as it enters their system and is augmented by the results of the text and image processing components.
 
-2.  Would they be able to keep their claims data in the existing database and layer in this search capability? If so, explain how.\
-    \
+2.  Would they be able to keep their claims data in the existing database and layer in this search capability? If so, explain how.
+
     Yes, the data in the Azure Search index would augment the data already stored in their SQL Database. The data in the Azure Search index would tie back to the data in SQL Database via values used as the primary key in the SQL Database (such as the claim ID, image ID, attachment ID, etc.).
 
 ## Checklist of preferred objection handling
 
-1.  We are skeptical about all the hype surrounding these "AI" solutions. It's hard to know what is feasible versus what is not possible with today's technology and Azure.\
-    
+1.  We are skeptical about all the hype surrounding these "AI" solutions. It's hard to know what is feasible versus what is not possible with today's technology and Azure.
+
     While it is true that there is a lot of hype around AI, the ability to deploy solutions that use data, machine learning, and deep learning to create an application with "AI" capabilities is real and is possible in Azure. Azure provides a wide range of services to address the needs of AI from pre-built AI capabilities in Cognitive Services to services that help you to build, train, and deploy your custom AI capabilities using Azure Machine Learning and other services from the Microsoft AI stack.
 
-2.  We know that are both pre-built AI and custom AI options. We are confused as to when to choose one over the other?\
-    
+2.  We know that are both pre-built AI and custom AI options. We are confused as to when to choose one over the other?
+
     You should consider the pre-built AI options first; however, if you rule them out because they are not fitting your requirements,  then you should explore the custom AI options. The advantage of pre-built AI options like Cognitive Services is that the models they use under the covers do not need to be trained by you, and you do not need to have the data to train them as a pre-requisite.
 
-3.  We expect some part of our solution would require deep learning; do you have any prescriptive guidance on how we might choose between investing to learn and use TensorFlow or the Microsoft Cognitive Toolkit (CNTK)?\
-    
+3.  We expect some part of our solution would require deep learning; do you have any prescriptive guidance on how we might choose between investing to learn and use TensorFlow or the Microsoft Cognitive Toolkit (CNTK)?
+
     Both TensorFlow and the Microsoft Cognitive Toolkit solve similar problems and have been used successfully by many companies for deep learning. At present, it appears that TensorFlow has a much larger community base and interest level, which can be measured simply by the number of stars it has in its GitHub project (which is an order of magnitude larger than that of the Microsoft Cognitive Toolkit). The size of the community means that is likely you will more easily find help online for issues with TensforFlow versus the Microsoft Cognitive Toolkit, which is why it may be a good reason to start with TensorFlow.
 
 ## Customer quote (to be read back to the attendees at the end)
