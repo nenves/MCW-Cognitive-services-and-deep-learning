@@ -418,7 +418,7 @@ To avoid unexpected charges, it is recommended that you clean up all of your lab
 2.  Select **Delete resource group** from the command bar \
     ![Screenshot of the Delete resource group button.](images/Hands-onlabunguided-CognitiveServicesanddeeplearningimages/media/image24.png "Delete resource group button")
 
-3.  In the confirmation dialog that appears, enter the name of the resource group and select
+3.  In the confirmation dialog that appears, enter the name of the resource group and select **Delete**
 
 4.  Wait for the confirmation that the Resource Group has been successfully deleted. If you don't wait, and the delete fails for some reason, you may be left with resources running that were not expected. You can monitor using the Notifications dialog, accessible from the Alarm icon.\
     ![The Notifications dialog box has a message stating that the resource group is being deleted.](images/Hands-onlabunguided-CognitiveServicesanddeeplearningimages/media/image25.png "Notifications dialog box")
