@@ -260,27 +260,30 @@ In this exercise, you will create and deploy a web service that uses a pre-train
 
 1.  Launch an instance of the command prompt from the Workbench
 
-2.  Deploy the summarizer service using the CLI by running the following command:\
-    \
+2.  Deploy the summarizer service using the CLI by running the following command:
+    
     az ml service create realtime -n summarizer -c ..\\..\\aml\_config\\conda\_dependencies.yml -m dummy\_model.bin -f summarizer\_service.py -r python
 
-3.  Test the deployed service with the following command (modify the parameter values to suit your actual deployment):\
-    \
-    az ml service run realtime -i summarizer.**\[mcwailab-xyz.location\]** -d \"I was driving down El Camino and stopped at a red light. It was about 3pm in the afternoon. The sun was bright and shining just behind the stoplight. This made it hard to see the lights. There was a car on my left in the left turn lane. A few moments later another car, a black sedan pulled up behind me. When the left turn light changed green, the black sedan hit me thinking that the light had changed for us, but I had not moved because the light was still red. After hitting my car, the black sedan backed up and then sped past me. I did manage to catch its license plate. The license plate of the black sedan was ABC123.\"
+3.  Test the deployed service with the following command (modify the parameter values to suit your actual deployment):
+
+    az ml service run realtime -i summarizer.**\[mcwailab-xyz.location\]** -d \"I was driving down El Camino and stopped at a red light. It was about 3pm in the afternoon. The sun was bright and shining just behind the stoplight. This made it hard to see the lights. There was a car on my left in the left turn lane. A few moments later another car, a black sedan pulled up behind me. When the left turn light changed green, the black sedan hit me thinking that the light had changed for us, but I had not moved because the light was still red. After hitting my car, the black sedan backed up and then sped past me. I did manage to catch its license plate. The license plate of the black sedan was ABC123."
 
 4.  Verify you get a summary back
 
-5.  In a notepad or other location take note of the full Service ID (e.g., summarizer.mcwailab-xyz.location) and the authorization key, which you will need later in the lab. To get the authorization key for your deployed service, run the following command and take note of the PrimaryKey value in the output:\
+5.  In a notepad or other location take note of the full Service ID (e.g., summarizer.mcwailab-xyz.location) and the authorization key, which you will need later in the lab. To get the authorization key for your deployed service, run the following command and take note of the PrimaryKey value in the output:
+
     ```
     az ml service keys realtime -i summarizer.[mcwailab-xyz.location]
     ```
 
 #### Exit criteria 
 
--   You were able to successfully receive a summary for the submitted claim text, similar to the following:\
+-   You were able to successfully receive a summary for the submitted claim text, similar to the following:
+
     ![In the Command Prompt window, the previous text displays.](images/Hands-onlabunguided-CognitiveServicesanddeeplearningimages/media/image21.png "Command Prompt window")
 
--   You have retrieved and noted the authorization key, similar to the following:\
+-   You have retrieved and noted the authorization key, similar to the following:
+
     ![In the Command Prompt window, the previous command and its output display. At this time, we are unable to capture all of the information in the command prompt window. Future versions of this course should address this.](images/Hands-onlabunguided-CognitiveServicesanddeeplearningimages/media/image22.png "Command Prompt window")
 
 
@@ -328,14 +331,14 @@ In this exercise, you use TensorFlow to construct and train a simple deep neural
 
 9.  Using the Jupyter Notebook interface, open claim\_class\_service.py and observe that the code it uses is like what you ran in the Claim Classification notebook, only formatted to fit the structure of an Azure Machine Learning web service (with init and run methods)
 
-10. Switch to your command line window and navigate to C:\\HOL\\mcw-ai-lab\\code\\03\_deployment\\claim\_class\_service and run:\
-    
+10. Switch to your command line window and navigate to C:\\HOL\\mcw-ai-lab\\code\\03\_deployment\\claim\_class\_service and run:
+
     ```
     az ml service create realtime -n claimclassifier -c ..\..\..\aml_config\conda_dependencies.yml -m claim_classifier.tfl.meta -f claim_class_service.py -r python -d claim_classifier.tfl.data-00000-of-00001 -d claim_classifier.tfl.index -d claims_text.txt -d textanalytics.py -d contractions.py
     ```
 
-11. Test the deployed service by submitting to it a string like "A tornado ripped thru my home" \
-    
+11. Test the deployed service by submitting to it a string like "A tornado ripped thru my home"
+
     ```
     az ml service run realtime -i claimclassifier.[mcwailab-xyz.location] -d "A tornado ripped thru my home"
     ```
@@ -398,7 +401,8 @@ In this exercise, you perform the final integration with the Computer Vision API
 
 #### Exit criteria 
 
--   You are able to create a claim summary that integrates calls to all of the AI services, similar to the following:\
+-   You are able to create a claim summary that integrates calls to all of the AI services, similar to the following:
+
     ![The Claim Summary results display.](images/Hands-onlabunguided-CognitiveServicesanddeeplearningimages/media/image23.png "Claim Summary results")
 
 ## After the hands-on lab 
@@ -415,15 +419,18 @@ To avoid unexpected charges, it is recommended that you clean up all of your lab
 
     b.  mcwailabenv (note there are two resources groups starting with this name, so delete both)
 
-2.  Select **Delete resource group** from the command bar \
+2.  Select **Delete resource group** from the command bar
+
     ![Screenshot of the Delete resource group button.](images/Hands-onlabunguided-CognitiveServicesanddeeplearningimages/media/image24.png "Delete resource group button")
 
 3.  In the confirmation dialog that appears, enter the name of the resource group and select **Delete**
 
-4.  Wait for the confirmation that the Resource Group has been successfully deleted. If you don't wait, and the delete fails for some reason, you may be left with resources running that were not expected. You can monitor using the Notifications dialog, accessible from the Alarm icon.\
+4.  Wait for the confirmation that the Resource Group has been successfully deleted. If you don't wait, and the delete fails for some reason, you may be left with resources running that were not expected. You can monitor using the Notifications dialog, accessible from the Alarm icon.
+
     ![The Notifications dialog box has a message stating that the resource group is being deleted.](images/Hands-onlabunguided-CognitiveServicesanddeeplearningimages/media/image25.png "Notifications dialog box")
 
-5.  When the Notification indicates success, the cleanup is complete\
+5.  When the Notification indicates success, the cleanup is complete
+
     ![The Notifications dialog box has a message stating that the resource group has been deleted.](images/Hands-onlabunguided-CognitiveServicesanddeeplearningimages/media/image26.png "Notifications dialog box")
 
 You should follow all steps provided *after* attending the Hands-on lab.
