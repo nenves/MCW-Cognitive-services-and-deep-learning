@@ -35,7 +35,6 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
         - [Infographic for common scenarios](#infographic-for-common-scenarios)
     - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
     - [Step 3: Present the solution](#step-3-present-the-solution)
-    - [Step 3: Present the solution](#step-3-present-the-solution-1)
     - [Wrap-up](#wrap-up)
     - [Additional references](#additional-references)
 
@@ -130,7 +129,8 @@ As a first step towards their bigger goals, Contoso would like to build a proof 
 
 ## Step 2: Design a proof of concept solution
 
-**Outcome** 
+**Outcome**
+
 Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format. 
 
 Timeframe: 60 minutes

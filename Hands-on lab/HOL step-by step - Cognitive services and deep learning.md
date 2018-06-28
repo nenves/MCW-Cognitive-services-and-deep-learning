@@ -97,10 +97,12 @@ In this exercise, you will setup your Azure Machine Learning Experimentation and
 
 1.  Navigate to the Azure Portal
 
-2.  Select **Create a resource**\
+2.  Select **Create a resource**
+
     ![Screenshot of the Create a resource button.](media/azure-portal-create-a-resource.png "Create a resource button")
 
-3.  Select **AI + Machine Learning** and then select **Machine Learning Experimentation**\
+3.  Select **AI + Machine Learning** and then select **Machine Learning Experimentation**
+
     ![In the New blade, AI + Machine Learning is selected.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image19.png "New blade")
 
 4.  On the **ML Experimentation** blade, provide the following:
@@ -125,12 +127,14 @@ In this exercise, you will setup your Azure Machine Learning Experimentation and
 
     j.  **Account name**: provide a name for your model management account
 
-    k.  **Model Management pricing tier**: select the S1 pricing tier\
+    k.  **Model Management pricing tier**: select the S1 pricing tier
+    
         ![The ML Experimentation blade fields are set to the previously defined settings.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image20.png "ML Experimentation blade")
 
 5.  Select **Create** to provision the Experimentation and Model Management Service. The deployment should take about 2 minutes.
 
-6.  When the deployment completes, navigate to your mcw-ai-lab resource group and confirm that you see an instance of Machine Learning Experimentation and Machine Learning Model Management\
+6.  When the deployment completes, navigate to your mcw-ai-lab resource group and confirm that you see an instance of Machine Learning Experimentation and Machine Learning Model Management
+
     ![Both Machine Learning Experimentation and Machine Learning Model Management are called out in the Resource group list.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image21.png "Resource group")
 
 ### Task 2: Create the Azure Machine Learning project
@@ -460,31 +464,36 @@ In this exercise, you will use TensorFlow to construct and train a simple deep n
 
 3.  Extract this zip and copy the contents to C:\\HOL\\mcw-ai-lab\\code\\02\_modeling
 
-4.  Return to the instance of the Jupyter Notebook home that should be open in your browser\
+4.  Return to the instance of the Jupyter Notebook home that should be open in your browser
+
     ![The Jupyter Notebook interface displays.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image50.png "Jupyter Notebook")
 
-5.  Select the code folder**, 02\_modeling**. You should see a folder listing similar to the following. Select **Claim Classification.ipynb**.\
+5.  Select the code folder**, 02\_modeling**. You should see a folder listing similar to the following. Select **Claim Classification.ipynb**.
+
     ![The 02\_modeling code folder contents display.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image51.png "Code folder contents")
 
 6.  The Claim Classification notebook will appear. Step through this notebook to read how the data is prepared and the neural network model is trained. Be sure to execute each cell as you get to it.
 
-7.  When you have finished executing the notebook, some model files will have been produced. Using File Explorer, navigate to **C:\\HOL\\mcw-ai-lab\\code\\02\_modeling**, you should see the three new files (each beginning with claim\_classifier.tfl).\
+7.  When you have finished executing the notebook, some model files will have been produced. Using File Explorer, navigate to **C:\\HOL\\mcw-ai-lab\\code\\02\_modeling**, you should see the three new files (each beginning with claim\_classifier.tfl).
+
     ![In File Explorer, three claim\_classifier files are selected.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image52.png "File Explorer")
 
-8.  Copy these three files and paste them under C:\\HOL\\mcw-ai-lab\\code\\03\_deployment\\claim\_class\_service. You are copying these over so they can be used by the predictive web service we will deploy.\
+8.  Copy these three files and paste them under C:\\HOL\\mcw-ai-lab\\code\\03\_deployment\\claim\_class\_service. You are copying these over so they can be used by the predictive web service we will deploy.
+
     ![In File Explorer, the same three claim\_classifier files display in the previously defined address.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image53.png "File Explorer ")
 
 9.  Next, download the supporting files for the claim\_class\_service from:
 
     <http://bit.ly/2u5DoGH>
 
-10. Extract the files and copy them into C:\\HOL\\mcw-ai-lab\\code\\03\_deployment\\claim\_class\_service.
+10. Extract the files and copy them into C:\\HOL\\mcw-ai-lab\\code\\03\_deployment\\claim\_class\_service
 
-11. Return to the instance of the Jupyter Notebook home that should be open in your browser.
+11. Return to the instance of the Jupyter Notebook home that should be open in your browser
 
-12. Select the code folder, **03\_deployment** and then **claim\_class\_service**.
+12. Select the code folder, **03\_deployment** and then **claim\_class\_service**
 
-13. Open **claim\_class\_service.py**. Observe that the code it uses is like what you ran in the Claim Classification notebook, only formatted to fit the structure of an Azure Machine Learning web service (with init and run methods).\
+13. Open **claim\_class\_service.py**. Observe that the code it uses is like what you ran in the Claim Classification notebook, only formatted to fit the structure of an Azure Machine Learning web service (with init and run methods).
+
     ![Screenshot of the Jupyter code window. At this time, we are unable to capture all of the information in the Jupyter code window. Future versions of this course should address this.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image54.png "Jupyter code window")
 
 14. Next, you will deploy this service. Switch to your command line window and navigate to **C:\\HOL\\mcw-ai-lab\\code\\03\_deployment\\claim\_class\_service**.
