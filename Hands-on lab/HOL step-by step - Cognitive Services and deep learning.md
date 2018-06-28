@@ -493,8 +493,8 @@ In this exercise, you will use TensorFlow to construct and train a simple deep n
 
     ```sh
     az ml service create realtime -n claimclassifier -c ..\..\..\aml_config\conda_dependencies.yml -m claim_classifier.tfl.meta -f claim_class_service.py -r python -d claim_classifier.tfl.data-00000-of-00001 -d claim_classifier.tfl.index -d claims_text.txt -d textanalytics.py -d contractions.py
+    ```
 
-```
 > ![In the Command Prompt window, the previous command and its output displays. At this time, we are unable to capture all of the information in the command prompt window. Future versions of this course should address this.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image55.png "Command Prompt window")
 
 16. Next, test the deployed service by running the following command (substitute the values of the Service ID as indicated in the last line of the previous):
