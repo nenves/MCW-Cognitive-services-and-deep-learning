@@ -368,7 +368,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 
 |    |            |
-|----------|:-------------:|
+|----------|-------------|
 | **Description** | **Links** |
 | Azure Machine Learning services | <https://docs.microsoft.com/en-us/azure/machine-learning/preview/overview-what-is-azure-ml>  |   |
 | Overview of Azure Machine Learning      |   |
@@ -470,7 +470,7 @@ _Classifying claim text data_
 
 6.  Assuming they will be using a fully connected DNN with a softmax activation function to train the classifier using a regression and TFLearn, pseudo code the code you would write to construct the network you just illustrated.
 
-    ```
+    ```python
     net = tflearn.input_data(shape=[None, ...])
 
     net = tflearn.fully_connected(net, ...)
@@ -484,14 +484,14 @@ _Classifying claim text data_
 
 7.  Next, pseudo code how they would construct the DNN from the network and fit the model to the vectorized data and the labels.
 
-    ```
+    ```python
     model = tflearn.DNN(net)
     model.fit(data, labels, ...)
     ```
 
 8.  With the trained model in hand, pseudo code how the model would be used to predict the class of a given claim text. What would the output of the prediction be? How would you interpret the value?
 
-    ```
+    ```python
     test_claim = ['I crashed my car into a pole.']
 
     test_claim = normalize_text(test_claim)
@@ -499,12 +499,13 @@ _Classifying claim text data_
     test_claim = extract_features(test_claim)
     pred = model.predict(test_claim)
     ```
- The output of pred is an array of the confidence that label is a 0 or a 1. For example:
- 
-    ```
+    The output of pred is an array of the confidence that label is a 0 or a 1. For example:
+
+    ```python
     array([ [0.22, 0.78] ])
     ```
- Could be interpreted to indicate that a prediction of 1 ("auto insurance claim") with a confidence of 78%.
+
+    Could be interpreted to indicate that a prediction of 1 ("auto insurance claim") with a confidence of 78%.
 
 9.  Describe at a high level, how you would deploy this trained model so it is available as a web service that can be integrated with the rest of the solution? What Azure Service(s) would be involved?
 
@@ -536,31 +537,30 @@ _Captions, tags and "reading" images_
 
     When using the Computer Vision API, either the binary image data or a URL pointing to a publicly accessible image can be supplied. The return value of Computer Vision API is a JSON document that includes the requested fields (such as captions and tags).
 
- An example of such as JSON response document is as follows:
- 
-    ```
-    
-    {'categories': [{'name': 'others_', 'score': 0.39453125}, 
-    {'name': 'trans_car', 'score': 0.44140625}], 
-    'color': {'accentColor': '895D42', 
-    'dominantColorBackground': 'White', 
-    'dominantColorForeground': 'White', 
-    'dominantColors': ['White'], 
-    'isBwImg': False}, 
-    'description': {'captions': [{'confidence': 0.9485308427051494, 
-        'text': 'a truck is parked on the side of a road'}], 
-    'tags': ['outdoor', 
-    'road', 
-    'truck', 
-    'car', 
-    'traffic']}, 
-    'metadata': {'format': 'Jpeg', 'height': 1080, 'width': 1920}, 
-    'requestId': '2236f0b9-044f-415f-b772-a9a4ce15728d', 
-    'tags': [{'confidence': 0.9950141310691833, 'name': 'outdoor'}, 
-    {'confidence': 0.9936342239379883, 'name': 'road'}, 
-    {'confidence': 0.981715738773346, 'name': 'truck'}, 
-    {'confidence': 0.749627411365509, 'name': 'transport'}, 
-    {'confidence': 0.16133838891983032, 'name': 'trailer'}]} 
+     An example of such as JSON response document is as follows:
+
+    ```json
+    {'categories': [{'name': 'others_', 'score': 0.39453125},
+    {'name': 'trans_car', 'score': 0.44140625}],
+    'color': {'accentColor': '895D42',
+    'dominantColorBackground': 'White',
+    'dominantColorForeground': 'White',
+    'dominantColors': ['White'],
+    'isBwImg': False},
+    'description': {'captions': [{'confidence': 0.9485308427051494,
+        'text': 'a truck is parked on the side of a road'}],
+    'tags': ['outdoor',
+    'road',
+    'truck',
+    'car',
+    'traffic']},
+    'metadata': {'format': 'Jpeg', 'height': 1080, 'width': 1920},
+    'requestId': '2236f0b9-044f-415f-b772-a9a4ce15728d',
+    'tags': [{'confidence': 0.9950141310691833, 'name': 'outdoor'},
+    {'confidence': 0.9936342239379883, 'name': 'road'},
+    {'confidence': 0.981715738773346, 'name': 'truck'},
+    {'confidence': 0.749627411365509, 'name': 'transport'},
+    {'confidence': 0.16133838891983032, 'name': 'trailer'}]}
 
     ```
 3.  How would you recommend Contoso implement support for "reading" any text that appears within an image, so it could be searched later? Would this require you to build a custom AI model? Is there a pre-built AI service you could use?
@@ -571,19 +571,40 @@ _Captions, tags and "reading" images_
 
     When using the Computer Vision API, either the binary image data or a URL pointing to a publicly accessible image can be supplied. The return value of Computer Vision API for the OCR feature is a JSON document, which includes a collection of bounding boxes that contain the text recognized from the image.
 
- An example of such as JSON response document is as follows:
- 
-    ```
-    {'language': 'en', 
-    'orientation': 'Up', 
-    'regions': [{'boundingBox': '365,127,937,78', 
-    'lines': [{'boundingBox': '1028,127,274,49', 
-        'words': [{'boundingBox': '1028,141,184,35', 'text': 'POLICE'}]}, 
-        {'boundingBox': '365,171,318,34', 
-        'words': [{'boundingBox': '365,171,318,34', 'text': 'EMERGENCY'}]}]}], 
-    'textAngle': 0.0} 
-    ```
+     An example of such as JSON response document is as follows:
 
+    ```json
+    {
+        'language': 'en',
+        'orientation': 'Up',
+        'regions': [
+            {
+                'boundingBox': '365,127,937,78',
+                'lines': [
+                    {
+                        'boundingBox': '1028,127,274,49',
+                        'words': [
+                            {
+                                'boundingBox': '1028,141,184,35',
+                                'text': 'POLICE'
+                            }
+                        ]
+                    },
+                    {
+                        'boundingBox': '365,171,318,34',
+                        'words': [
+                            {
+                                'boundingBox': '365,171,318,34',
+                                'text': 'EMERGENCY'
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        'textAngle': 0.0
+    }
+    ```
 
 _Enabling search_
 

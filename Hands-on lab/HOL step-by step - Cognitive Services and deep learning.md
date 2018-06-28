@@ -12,11 +12,6 @@ Hands-on lab step-by-step
 June 2018
 </div>
 
-
-
-
-
-
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
 
 Microsoft may have patents, patent applications, trademarks, copyrights, or other intellectual property rights covering subject matter in this document. Except as expressly provided in any written license agreement from Microsoft, the furnishing of this document does not give you any license to these patents, trademarks, copyrights, or other intellectual property.
@@ -44,7 +39,6 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
         - [Task 3: Set Visual Studio Code as the project IDE in Workbench](#task-3-set-visual-studio-code-as-the-project-ide-in-workbench)
         - [Task 4: Create the Summarization service](#task-4-create-the-summarization-service)
         - [Task 5: Deploy the Summarization service](#task-5-deploy-the-summarization-service)
-        
     - [Exercise 3: Applying TensorFlow](#exercise-3-applying-tensorflow)
         - [Task 1: Prepare TensorFlow](#task-1-prepare-tensorflow)
         - [Task 2: Train and deploy the TensorFlow model](#task-2-train-and-deploy-the-tensorflow-model)
@@ -104,7 +98,7 @@ In this exercise, you will setup your Azure Machine Learning Experimentation and
 1.  Navigate to the Azure Portal
 
 2.  Select **Create a resource**\
-    ![Screenshot of the Create a resource button.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image3.png "Create a resource button")
+    ![Screenshot of the Create a resource button.](media/azure-portal-create-a-resource.png "Create a resource button")
 
 3.  Select **AI + Machine Learning** and then select **Machine Learning Experimentation**\
     ![In the New blade, AI + Machine Learning is selected.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image19.png "New blade")
@@ -161,7 +155,7 @@ In this exercise, you will setup your Azure Machine Learning Experimentation and
 
     a.  **Project name**: mcw-ai-lab
 
-    b.  **Project directory**: C:\\HOL
+    b.  **Project directory**: C:\HOL
 
     c.  **Project description**: leave blank
 
@@ -204,11 +198,13 @@ In this exercise, you will create and deploy a web service that uses a pre-train
 
     b.  For location, use eastus2, westcentralus, australiaeast, westeurope, or southeastasia, as those are the only acceptable values at this time
 
-        az ml env setup -c -n \<environment name\> \--location \<e.g. eastus2\>
+    ```sh
+    az ml env setup -c -n <environment name> --location <e.g. eastus2>
+    ```
 
 7.  If prompted, copy the URL presented and sign in using your web browser
 
-8.  Enter the code provided in the command prompt\
+8.  Enter the code provided in the command prompt
     ![Screenshot of the Device Login page](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image34.png "Device Login page")
 
 9.  Select **Continue**\
@@ -219,12 +215,12 @@ In this exercise, you will create and deploy a web service that uses a pre-train
 
 11.  Return to the command prompt, which should automatically update after you log in
 
-12.  At the "Subscription set to \<subscription name\>" prompt, enter **Y** if the subscription name is correct, or **N** to select the subscription to use from a list\
+12.  At the "Subscription set to <subscription name>" prompt, enter **Y** if the subscription name is correct, or **N** to select the subscription to use from a list
     ![In the Command Prompt window, the updates display. At this time, we are unable to capture all of the information in the command prompt window. Future versions of this course should address this.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image37.png "Command prompt window")
 
-9.  It will take 10-20 minutes for your ACS cluster to be ready. You can periodically check on the status by running the command shown in the output to the previous step, which is of the form:\
+9.  It will take 10-20 minutes for your ACS cluster to be ready. You can periodically check on the status by running the command shown in the output to the previous step, which is of the form:
 
-    ```
+    ```sh
     az ml env show -g <resourceGroupName> -n <clusterName>
     ```
 
@@ -238,42 +234,52 @@ The tasks that follow depend on Python libraries, like nltk and gensim. The foll
 
 1.  From the **File** menu of Workbench, select **Open Command Prompt**
 
-2.  Run the following command to install nltk:\
-    ```
+2.  Run the following command to install nltk:
+
+    ```sh
     pip install nltk
     ```
-3.  NLTK should install, with a message similar to the following:\
+
+1.  NLTK should install, with a message similar to the following:
     ![In the Command Prompt window, the previous commands and their output display. At this time, we are unable to capture all of the information in the command prompt window. Future versions of this course should address this.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image29.png "Command Prompt window")
 
-4.  NLTK is a rich toolkit with modular components, many of which are not installed by default. To install all the components, run the python shell by entering **python** at the command prompt:\
-    ```
+4.  NLTK is a rich toolkit with modular components, many of which are not installed by default. To install all the components, run the python shell by entering **python** at the command prompt:
+
+    ```sh
     python
     ```
 
-5.  Within the python shell, run the following two lines:\
-    ```
+5.  Within the python shell, run the following two lines:
+
+    ```sh
     import nltk
     nltk.download('all')
     ```
-6.  The downloader will take about 5 minutes to complete. Once it is finished, exit the python shell by entering:\
-    ```
+
+6.  The downloader will take about 5 minutes to complete. Once it is finished, exit the python shell by entering:
+
+    ```sh
     exit()
     ```
 
-7.  Run the following command to install genism:\
-    ```
+7.  Run the following command to install gensim:
+
+    ```sh
     pip install gensim
     ```
-    \
+    
     ![In the Command Prompt window, the previous command and its output display. At this time, we are unable to capture all of the information in the command prompt window. Future versions of this course should address this.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image30.png "Command Prompt window")
 
-8.  Next, download a pre-built Jupyter Notebook that you will step through to understand the process used to summarize the text of the claims documents. In the browser on your VM, navigate to the following (note that the URL is case sensitive). Note, if using IE, you will need to modify the default security settings, which prevent files from being downloaded.\
-    \
+8.  Next, download a pre-built Jupyter Notebook that you will step through to understand the process used to summarize the text of the claims documents. In the browser on your VM, navigate to the following (note that the URL is case sensitive). Note, if using IE, you will need to modify the default security settings, which prevent files from being downloaded.
+
     <http://bit.ly/2G4hAQz>
 
-9.  In the command prompt, enter the following and press enter to launch the Jupyter Notebook:\
-    jupyter notebook\
-    \
+9.  In the command prompt, enter the following and press enter to launch the Jupyter Notebook:
+
+    ```sh
+    jupyter notebook
+    ```
+
     ![In the Command Prompt window, the command to launch the Jupyter Notebook displays. At this time, we are unable to capture all of the information in the command prompt window. Future versions of this course should address this.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image31.png "Command Prompt window")
 
 10. In a few moments, you should be prompted for which browser to use to open the link
@@ -328,7 +334,7 @@ The tasks that follow depend on Python libraries, like nltk and gensim. The foll
 
 7.  At the last line, under azure-ml-api-sdk add another line with -gensim to the pip configuration. You should also add entries for tensorflow and tflearn, which we will need later in the lab. Your final configuration should look as follows:
 
-    ```
+    ```sh
     name: project_environment
 
     dependencies:
@@ -354,12 +360,13 @@ The tasks that follow depend on Python libraries, like nltk and gensim. The foll
 
 2. Wait for your ACS cluster to be ready. You can periodically check on the status by running the command shown in the output to the previous step, which is of the form:
 
-    ```
+    ```sh
     az ml env show -g <resourceGroupName> -n <clusterName>
     ```
 
 3. Once the environment has successfully provisioned (the Provisioning State in the above command will read "Succeeded"), set your default environment with a command of the form:
-    ```
+
+    ```sh
     az ml env set -g \<resourceGroupName\> -n \<clusterName\>
     ```
     
@@ -372,27 +379,28 @@ The tasks that follow depend on Python libraries, like nltk and gensim. The foll
     a.  For \<acctname\>, enter the name of the Machine Learning Model Management resource in your mcw-ai-lab resource group.
 
     b.  For \<resourcegroupname\>, use your mcw-ai-lab resource group name.
-    ```
+
+    ```sh
     az ml account modelmanagement set -n <acctname> -g <resourcegroupname>
     ```
 
 6.  At the command prompt, change directories to the code\\03\_deployment directory by executing the following command:
 
-    ```
+    ```sh
     cd code\03_deployment
     ```
 
-7.  You can deploy the service using a single command (which orchestrates the multiple steps of creating a docker manifest, creating a docker image, and deploying a container instance from the image). The command needs to refer to all the components required for the service, including the dummy model file, the service script, the conda dependencies, and the runtime to use (python in this case). Run the following command to deploy the summarizer service:\
-    
-    ```
+7.  You can deploy the service using a single command (which orchestrates the multiple steps of creating a docker manifest, creating a docker image, and deploying a container instance from the image). The command needs to refer to all the components required for the service, including the dummy model file, the service script, the conda dependencies, and the runtime to use (python in this case). Run the following command to deploy the summarizer service:
+
+    ```sh
     az ml service create realtime -n summarizer -c ..\..\aml_config\conda_dependencies.yml -m dummy_model.bin -f summarizer_service.py -r python
     ```
-    
+
     ![In the Command Prompt window, the previous command and its output display. At this time, we are unable to capture all of the information in the command prompt window. Future versions of this course should address this.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image45.png "Command Prompt window")
 
-8.  Notice in the output of the preceding command, you are provided with instructions (third line from last) on how you can invoke the deployed service using the CLI. Try executing the following command (modify the Service ID of you service as indicated in the previous command output):\
-    
-    ```
+8.  Notice in the output of the preceding command, you are provided with instructions (third line from last) on how you can invoke the deployed service using the CLI. Try executing the following command (modify the Service ID of you service as indicated in the previous command output):
+
+    ```sh
     az ml service run realtime -i summarizer.[mcwailab-xyz.location] -d "I was driving down El Camino and stopped at a red light. It was about 3pm in the afternoon. The sun was bright and shining just behind the stoplight. This made it hard to see the lights. There was a car on my left in the left turn lane. A few moments later another car, a black sedan pulled up behind me. When the left turn light changed green, the black sedan hit me thinking that the light had changed for us, but I had not moved because the light was still red. After hitting my car, the black sedan backed up and then sped past me. I did manage to catch its license plate. The license plate of the black sedan was ABC123."
     ```
 
@@ -402,10 +410,10 @@ The tasks that follow depend on Python libraries, like nltk and gensim. The foll
 
 10.  Finally, in a notepad or other location take note of the full Service ID (e.g., summarizer.mcwailab-xyz.location) and the authorization key, which you will need later in the lab. To get the authorization key for your deployed service, run the following command and take note of the PrimaryKey value in the output:
 
-        ```
+        ```sh
         az ml service keys realtime -i summarizer.[mcwailab-xyz.location]
         ```
-    
+
         ![In the Command Prompt window, the previous command and its output display. At this time, we are unable to capture all of the information in the command prompt window. Future versions of this course should address this.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image47.png "Command Prompt window")
 
 ## Exercise 3: Applying TensorFlow
@@ -421,8 +429,8 @@ In this exercise, you will use TensorFlow to construct and train a simple deep n
 2.  Switch to the command prompt that is running the Jupyter Notebook command and press **Control + Break**. This will stop the Jupyter Notebook process while you update TensorFlow.
 
 3.  From the command line run:
-    
-    ```
+
+    ```sh
     pip install tensorflow
     ```
 
@@ -431,11 +439,11 @@ In this exercise, you will use TensorFlow to construct and train a simple deep n
     ![In the Command Prompt window, output indicates that the file was successfully installed. At this time, we are unable to capture all of the information in the command prompt window. Future versions of this course should address this.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image48.png "Command Prompt window")
 
 5.  We will be using the TFLearn library which sits atop TensorFlow. To install it run:
-    
-    ```
+
+    ```sh
     pip install tflearn
     ```
-    
+
     ![In the Command Prompt window, the installation progress and the success message displays. At this time, we are unable to capture all of the information in the command prompt window. Future versions of this course should address this.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image49.png "Command Prompt window")
 
 6.  Run "Jupyter Notebook" to re-start the process
@@ -446,8 +454,8 @@ In this exercise, you will use TensorFlow to construct and train a simple deep n
 
 1.  Return to your RDP session to the lab VM
 
-2.  Download the TensorFlow notebook, text analytics helper module and sample data from the following link:\
-    \
+2.  Download the TensorFlow notebook, text analytics helper module and sample data from the following link:
+
     <http://bit.ly/2pucpje>
 
 3.  Extract this zip and copy the contents to C:\\HOL\\mcw-ai-lab\\code\\02\_modeling
@@ -466,8 +474,8 @@ In this exercise, you will use TensorFlow to construct and train a simple deep n
 8.  Copy these three files and paste them under C:\\HOL\\mcw-ai-lab\\code\\03\_deployment\\claim\_class\_service. You are copying these over so they can be used by the predictive web service we will deploy.\
     ![In File Explorer, the same three claim\_classifier files display in the previously defined address.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image53.png "File Explorer ")
 
-9.  Next, download the supporting files for the claim\_class\_service from:\
-    \
+9.  Next, download the supporting files for the claim\_class\_service from:
+
     <http://bit.ly/2u5DoGH>
 
 10. Extract the files and copy them into C:\\HOL\\mcw-ai-lab\\code\\03\_deployment\\claim\_class\_service.
@@ -483,34 +491,33 @@ In this exercise, you will use TensorFlow to construct and train a simple deep n
 
 15. Run the following command in the context of the claim\_class\_service folder to deploy the service:
 
-```
-az ml service create realtime -n claimclassifier -c ..\..\..\aml_config\conda_dependencies.yml -m claim_classifier.tfl.meta -f claim_class_service.py -r python -d claim_classifier.tfl.data-00000-of-00001 -d claim_classifier.tfl.index -d claims_text.txt -d textanalytics.py -d contractions.py
+    ```sh
+    az ml service create realtime -n claimclassifier -c ..\..\..\aml_config\conda_dependencies.yml -m claim_classifier.tfl.meta -f claim_class_service.py -r python -d claim_classifier.tfl.data-00000-of-00001 -d claim_classifier.tfl.index -d claims_text.txt -d textanalytics.py -d contractions.py
 
 ```
 > ![In the Command Prompt window, the previous command and its output displays. At this time, we are unable to capture all of the information in the command prompt window. Future versions of this course should address this.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image55.png "Command Prompt window")
 
 16. Next, test the deployed service by running the following command (substitute the values of the Service ID as indicated in the last line of the previous):
-    
-    ```
+
+    ```sh
     az ml service run realtime -i claimclassifier.[mcwailab-xyz.location] -d "A tornado ripped through my home."
     ```
-    
-    
+
     ![In the Command Prompt window, the previous command and its output display. At this time, we are unable to capture all of the information in the command prompt window. Future versions of this course should address this.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image56.png "Command Prompt window")
 
 17. Recall the classifier will return 1 if the text is classified as related to a car insurance claim and 0 if the claim pertains to a home insurance claim. Try submitting a few different sentences to the service.
 
 18. Next, in a notepad or other location take note of the full Service ID (e.g., claimclassifier.mcwailab-xyz.location) and the authorization key which you will need later in the lab. To get the authorization key for your deployed service, run the following command and take note of the PrimaryKey value in the output:
-    
-    ```
+
+    ```sh
     az ml service keys realtime -i claimclassifier.[mcwailab-xyz.location]
     ```
-    
+
     ![In the Command Prompt window, the previous command and its output display. At this time, we are unable to capture all of the information in the command prompt window. Future versions of this course should address this.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image57.png "Command Prompt window")
 
 19. Finally, run the following command to retrieve the IP address of your claimclassifier and summarizer services, and note the value in notepad or other location for use later in the lab. The IP address will be the same for both services.
 
-    ```
+    ```sh
     az ml service usage realtime -i claimclassifier.[mcwailab-xyz.location]
     ```
 
@@ -546,13 +553,16 @@ In this exercise, you will perform the final integration with the Computer Visio
 
 5.  Select **Create**
 
-6.  When the notification appears that the deployment succeeded, select **Go to resource**\
+6.  When the notification appears that the deployment succeeded, select **Go to resource**
+
     ![A Deployment succeeded notification displays.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image61.png "Notification")
 
-7.  Select **Keys** and then copy the value of Key 1 into notepad or something similar as you will need this value later in the lab\
+7.  Select **Keys** and then copy the value of Key 1 into notepad or something similar as you will need this value later in the lab
+
     ![In the Cognitive Services blade, under Resource Management, Keys is selected. ](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image62.png "Cognitive Services blade")
 
-8.  Select **Overview** and copy the value of Endpoint from the Essentials panel. Store this value in notepad or something similar as you will need this value later in the lab.\
+8.  Select **Overview** and copy the value of Endpoint from the Essentials panel. Store this value in notepad or something similar as you will need this value later in the lab.
+
     ![In the Cognitive Services blade, the Endpoint URL is selected.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image63.png "Cognitive Services blade")
 
 ### Task 2: Deploy the Text Analytics API
@@ -561,7 +571,8 @@ In this exercise, you will perform the final integration with the Computer Visio
 
 2.  Select **Create a resource**
 
-3.  Select **AI + Cognitive Services** and then **Text Analytics API**\
+3.  Select **AI + Cognitive Services** and then **Text Analytics API**
+
     ![In the New blade, both AI + Cognitive Services and Text Analytics API are selected.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image64.png "New blade")
 
 4.  On the **Create** blade, provide the following:
@@ -579,35 +590,41 @@ In this exercise, you will perform the final integration with the Computer Visio
 
 5.  Select **Create**
 
-6.  When the notification appears that the deployment succeeded, select **Go to resource**\
+6.  When the notification appears that the deployment succeeded, select **Go to resource**
+
     ![A Deployment succeeded notification displays.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image66.png "Notification")
 
-7.  Select **Keys**, and then copy the value of Key 1 into notepad or something similar as you will need this value later in the lab.\
+7.  Select **Keys**, and then copy the value of Key 1 into notepad or something similar as you will need this value later in the lab.
+
     ![In the Cognitive Services blade, under Resource Management, Keys is selected. ](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image67.png "Cognitive Services blade")
 
-8.  Select **Overview** and copy the value of Endpoint from the Essentials panel. Store this value in notepad or something similar as you will need this value later in the lab.\
+8.  Select **Overview** and copy the value of Endpoint from the Essentials panel. Store this value in notepad or something similar as you will need this value later in the lab.
+
     ![In the Cognitive Services blade, the Endpoint URL is selected.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image68.png "Cognitive Services blade")
 
 ### Task 3: Completing the solution
 
 1.  Return to your RDP session to the lab VM
 
-2.  Download the starter files for this task from:\
-    \
+2.  Download the starter files for this task from:
+
     <http://bit.ly/2puj7oL>
 
 3.  Extract the contents of this zip file to C:\\HOL\\mcw-ai-lab\\code\\03\_deployment
 
-4.  Return to the instance of the Jupyter Notebook home that should be open in your browser\
+4.  Return to the instance of the Jupyter Notebook home that should be open in your browser
+
     ![The Jupyter Notebook home page displays in a browser window.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image50.png "Jupyter Notebook")
 
-5.  Select the code folder, **03\_deployment**. You should see a folder listing like the following. Select **Cognitive Services.ipynb**.\
+5.  Select the code folder, **03\_deployment**. You should see a folder listing like the following. Select **Cognitive Services.ipynb**.
+
     ![In the Jupyter notebook, the 03\_deployment folder contents display.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image69.png "Jupyter notebook")
 
-6.  Follow the steps within the notebook to complete the lab and view the result of combining Cognitive Services with your Azure Machine Learning Services.\
+6.  Follow the steps within the notebook to complete the lab and view the result of combining Cognitive Services with your Azure Machine Learning Services.
+
     ![The Claim Summary results display.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image70.png "Claim Summary results")
 
-## After the hands-on lab 
+## After the hands-on lab
 
 Duration: 5 minutes
 
@@ -621,16 +638,16 @@ To avoid unexpected charges, it is recommended that you clean up all of your lab
 
     b.  mcwailabenv (note there are two resources groups starting with this name, so delete both)
 
-2.  Select **Delete resource group** from the command bar\
+2.  Select **Delete resource group** from the command bar
+
     ![Screenshot of the Delete resource group button.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image71.png "Delete resource group button")
 
 3.  In the confirmation dialog that appears, enter the name of the resource group and select **Delete**
 
-4.  Wait for the confirmation that the Resource Group has been successfully deleted. If you don't wait, and the delete fails for some reason, you may be left with resources running that were not expected. You can monitor using the Notifications dialog, which is accessible from the Alarm icon.\
+4.  Wait for the confirmation that the Resource Group has been successfully deleted. If you don't wait, and the delete fails for some reason, you may be left with resources running that were not expected. You can monitor using the Notifications dialog, which is accessible from the Alarm icon.
     ![The Notifications dialog box has a message stating that the resource group is being deleted.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image72.png "Notifications dialog box")
 
-5.  When the Notification indicates success, the cleanup is complete.\
+5.  When the Notification indicates success, the cleanup is complete.
     ![The Notifications dialog box has a message stating that the resource group has been deleted.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image73.png "Notifications dialog box")
 
 You should follow all steps provided *after* attending the Hands-on lab.
-
