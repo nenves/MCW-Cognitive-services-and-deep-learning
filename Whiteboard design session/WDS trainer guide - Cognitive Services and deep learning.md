@@ -99,7 +99,7 @@ Outcome: Analyze your customer's needs
 
 **Step 2: Design a proof of concept solution (60 minutes)**
 
-Outcome: Prepare to present a solution for your target customer audience
+Outcome: Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format.
 
 -   Determine your target customer audience
 
@@ -525,7 +525,7 @@ _Summarizing claim text_
 
 1.  The team at Contoso has heard about a Python library called gensim that has a summarize function. Given an input of text, it is capable of extracting a summary of the desired length. Contoso would like their PoC to implement its summarization functionality initially using gensim. However, the process they follow to deploy the summarization capability should also enable them to replace the use of gensim with another library or with the use of their own custom trained models if desired down the road. Describe how Contoso should deploy the summarization service so that these requirements are met? Can they deploy a predictive web service to Azure Machine Learning services that does not utilize an external model (as in the case with gensim) or would support an unsupervised approach (such as clustering)?
 
- Azure Machine Learning services can be used to deploy web services that do not have a model. While the CLI used to perform the deployment requires a model argument, the argument can refer to any file, and it does not require the use of the file during the web service runtime. Therefore, Contoso could deploy a web service that uses gensim to perform summarization.
+    Azure Machine Learning services can be used to deploy web services that do not have a model. While the CLI used to perform the deployment requires a model argument, the argument can refer to any file, and it does not require the use of the file during the web service runtime. Therefore, Contoso could deploy a web service that uses gensim to perform summarization.
 
 _Captions, tags and "reading" images_
 
