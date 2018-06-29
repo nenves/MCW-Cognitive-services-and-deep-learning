@@ -17,15 +17,15 @@ At the end of this workshop, you will be better able to present solutions levera
 
 ### Whiteboard design session
 
-In this whiteboard design session, you will design a monitoring a web application that will be deployed to Azure IaaS. You will include Azure security and management services to manage and monitor the operational performance and security of the underlying infrastructure, along with Azure Application Insights to monitor performance, application usage, and identify the cause of any application issues that emerge.
+In this whiteboard design session, you will work with a group to design a monitoring a web application that will be deployed to Azure IaaS. You will include Azure security and management services to manage and monitor the operational performance and security of the underlying infrastructure, along with Azure Application Insights to monitor performance, application usage, and identify the cause of any application issues that emerge.
 
-At the end of this workshop, you will be better able to design solutions leveraging Azure Machine Learning services and Cognitive Services.
+At the end of this whiteboard design session, you will be better able to design solutions leveraging Azure Machine Learning services and Cognitive Services.
 
 ### Hands-on lab
 
-In this workshop, you will implement and deploy a monitoring a web application to Azure IaaS. Azure security and management services will be used to manage and monitor the operational performance and security of the underlying infrastructure. Azure Application Insights will be used to monitor performance, application usage, and identify the cause of any application issues that emerge.
+In this hands-on lab, you will implement and deploy a monitoring a web application to Azure IaaS. Azure security and management services will be used to manage and monitor the operational performance and security of the underlying infrastructure. Azure Application Insights will be used to monitor performance, application usage, and identify the cause of any application issues that emerge.
 
-At the end of this workshop, you will be better able to implement solutions leveraging Azure Machine Learning services and Cognitive Services.
+At the end of this hands-on lab, you will be better able to implement solutions leveraging Azure Machine Learning services and Cognitive Services.
 
 ## Azure services and related products
 

@@ -41,15 +41,9 @@ Updated June 2018
 
 ## Abstract and learning objectives
 
-The attendee will deploy and monitor a web application that has been deployed to Azure IaaS in this Hands-on Lab (HOL). Azure security and management services will be used to manage and monitor the operational performance and security of the underlying infrastructure. Azure Application Insights will be used to monitor performance, application usage, and identify the cause of any application issues that emerge.
+In this hands-on lab, you will implement and deploy a monitoring a web application to Azure IaaS. Azure security and management services will be used to manage and monitor the operational performance and security of the underlying infrastructure. Azure Application Insights will be used to monitor performance, application usage, and identify the cause of any application issues that emerge.
 
-Along the way, you will also learn about the following technologies and services:
-
-- Azure Machine Learning services
-- Cognitive Services
-- Computer Vision API
-- Text Analytics API
-- TensorFlow
+At the end of this hands-on lab, you will be better able to implement solutions leveraging Azure Machine Learning services and Cognitive Services.
 
 ## Overview
 
