@@ -636,9 +636,11 @@ To avoid unexpected charges, it is recommended that you clean up all of your lab
 3.  In the confirmation dialog that appears, enter the name of the resource group and select **Delete**
 
 4.  Wait for the confirmation that the Resource Group has been successfully deleted. If you don't wait, and the delete fails for some reason, you may be left with resources running that were not expected. You can monitor using the Notifications dialog, which is accessible from the Alarm icon.
+
     ![The Notifications dialog box has a message stating that the resource group is being deleted.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image72.png "Notifications dialog box")
 
-5.  When the Notification indicates success, the cleanup is complete.
+5.  When the Notification indicates success, the cleanup is complete
+
     ![The Notifications dialog box has a message stating that the resource group has been deleted.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image73.png "Notifications dialog box")
 
 You should follow all steps provided *after* attending the Hands-on lab.
