@@ -1,5 +1,5 @@
 
-# Cognitive Services and Deep Learning setup
+# Cognitive services and deep learning setup
 
 ## Requirements
 
