@@ -1,16 +1,4 @@
-![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
-
-<div class="MCWHeader1">
-Cognitive Services and deep learning
-</div>
-
-<div class="MCWHeader2">
-Hands-on lab step-by-step
-</div>
-
-<div class="MCWHeader3">
-June 2018
-</div>
+![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
 
@@ -22,52 +10,46 @@ The names of manufacturers, products, or URLs are provided for informational pur
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are the property of their respective owners.
 
-**Contents**
-<!-- TOC -->
+# Cognitive Services and deep learning hands-on lab step-by-step
 
-- [Cognitive Services and deep learning hands-on lab step-by-step](#cognitive-services-and-deep-learning-hands-on-lab-step-by-step)
-    - [Abstract and learning objectives](#abstract-and-learning-objectives)
-    - [Overview](#overview)
-    - [Solution architecture](#solution-architecture)
-    - [Requirements](#requirements)
-    - [Exercise 1: Setup Azure Machine Learning accounts](#exercise-1-setup-azure-machine-learning-accounts)
-        - [Task 1: Provision Azure Machine Learning Experimentation service](#task-1-provision-azure-machine-learning-experimentation-service)
-        - [Task 2: Create the Azure Machine Learning project](#task-2-create-the-azure-machine-learning-project)
-    - [Exercise 2: Create and Deploy an Unsupervised Model](#exercise-2-create-and-deploy-an-unsupervised-model)
-        - [Task 1: Deploy your ACS cluster](#task-1-deploy-your-acs-cluster)
-        - [Task 2: Install dependencies](#task-2-install-dependencies)
-        - [Task 3: Set Visual Studio Code as the project IDE in Workbench](#task-3-set-visual-studio-code-as-the-project-ide-in-workbench)
-        - [Task 4: Create the Summarization service](#task-4-create-the-summarization-service)
-        - [Task 5: Deploy the Summarization service](#task-5-deploy-the-summarization-service)
-    - [Exercise 3: Applying TensorFlow](#exercise-3-applying-tensorflow)
-        - [Task 1: Prepare TensorFlow](#task-1-prepare-tensorflow)
-        - [Task 2: Train and deploy the TensorFlow model](#task-2-train-and-deploy-the-tensorflow-model)
-    - [Exercise 4: Completing the solution](#exercise-4-completing-the-solution)
-        - [Task 1: Deploy the Computer Vision API](#task-1-deploy-the-computer-vision-api)
-        - [Task 2: Deploy the Text Analytics API](#task-2-deploy-the-text-analytics-api)
-        - [Task 3: Completing the solution](#task-3-completing-the-solution)
-    - [After the hands-on lab](#after-the-hands-on-lab)
-        - [Task 1: Clean up lab resources](#task-1-clean-up-lab-resources)
+Updated June 2018
 
-<!-- /TOC -->
+## Contents
 
-# Cognitive Services and deep learning hands-on lab step-by-step 
+- [Abstract and learning objectives](#abstract-and-learning-objectives)
+- [Overview](#overview)
+- [Solution architecture](#solution-architecture)
+- [Requirements](#requirements)
+- [Exercise 1: Setup Azure Machine Learning accounts](#exercise-1-setup-azure-machine-learning-accounts)
+  - [Task 1: Provision Azure Machine Learning Experimentation service](#task-1-provision-azure-machine-learning-experimentation-service)
+  - [Task 2: Create the Azure Machine Learning project](#task-2-create-the-azure-machine-learning-project)
+- [Exercise 2: Create and Deploy an Unsupervised Model](#exercise-2-create-and-deploy-an-unsupervised-model)
+  - [Task 1: Deploy your ACS cluster](#task-1-deploy-your-acs-cluster)
+  - [Task 2: Install dependencies](#task-2-install-dependencies)
+  - [Task 3: Set Visual Studio Code as the project IDE in Workbench](#task-3-set-visual-studio-code-as-the-project-ide-in-workbench)
+  - [Task 4: Create the Summarization service](#task-4-create-the-summarization-service)
+  - [Task 5: Deploy the Summarization service](#task-5-deploy-the-summarization-service)
+- [Exercise 3: Applying TensorFlow](#exercise-3-applying-tensorflow)
+  - [Task 1: Prepare TensorFlow](#task-1-prepare-tensorflow)
+  - [Task 2: Train and deploy the TensorFlow model](#task-2-train-and-deploy-the-tensorflow-model)
+- [Exercise 4: Completing the solution](#exercise-4-completing-the-solution)
+  - [Task 1: Deploy the Computer Vision API](#task-1-deploy-the-computer-vision-api)
+  - [Task 2: Deploy the Text Analytics API](#task-2-deploy-the-text-analytics-api)
+  - [Task 3: Completing the solution](#task-3-completing-the-solution)
+- [After the hands-on lab](#after-the-hands-on-lab)
+  - [Task 1: Clean up lab resources](#task-1-clean-up-lab-resources)
 
-## Abstract and learning objectives 
+## Abstract and learning objectives
 
 The attendee will deploy and monitor a web application that has been deployed to Azure IaaS in this Hands-on Lab (HOL). Azure security and management services will be used to manage and monitor the operational performance and security of the underlying infrastructure. Azure Application Insights will be used to monitor performance, application usage, and identify the cause of any application issues that emerge.
 
 Along the way, you will also learn about the following technologies and services:
 
--   Azure Machine Learning services
-
--   Cognitive Services
-
--   Computer Vision API
-
--   Text Analytics API
-
--   TensorFlow
+- Azure Machine Learning services
+- Cognitive Services
+- Computer Vision API
+- Text Analytics API
+- TensorFlow
 
 ## Overview
 
