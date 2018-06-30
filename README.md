@@ -1,4 +1,4 @@
-# Cognitive Services and deep learning
+# Cognitive services and deep learning
 
 In this workshop, you will help Contoso Ltd. build a proof of concept that shows how they can build a solution that amplifies the claims processing capabilities of their agents.
 
