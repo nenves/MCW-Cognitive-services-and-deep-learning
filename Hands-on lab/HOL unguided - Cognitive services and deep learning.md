@@ -68,7 +68,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 <!-- /TOC -->
 
-# Cognitive Services and deep learning hands-on lab unguided 
+# Cognitive services and deep learning hands-on lab unguided 
 
 ## Abstract and learning objectives 
 
