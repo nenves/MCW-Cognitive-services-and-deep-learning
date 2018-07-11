@@ -11,19 +11,19 @@ In this workshop, you will help Contoso Ltd. build a proof of concept that shows
 
 ### Workshop
 
-In this workshop, you will examine the process for deploying and monitoring a web application that has been deployed to Azure IaaS. Azure security and management services will be used to manage and monitor the operational performance and security of the underlying infrastructure. Azure Application Insights will be used to monitor performance, application usage, and identify the cause of any application issues that emerge.
+In this workshop, you will learn to combine both pre-built artificial intelligence (AI) (in the form of various Cognitive Services) with custom AI (in the form of services built and deployed with Azure Machine Learning services). You will learn to create intelligent solutions atop unstructured text data by designing and implementing a text analytics pipeline. You will also learn how to build a binary classifier using a simple neural network that can be used to classify the textual data. Also, you will learn how to deploy multiple kinds of predictive services using Azure Machine Learning and learn to integrate with the Computer Vision API and the Text Analytics API from Cognitive Services.
 
 At the end of this workshop, you will be better able to present solutions leveraging Azure Machine Learning services and Cognitive Services.
 
 ### Whiteboard design session
 
-In this whiteboard design session, you will work with a group to design a monitoring a web application that will be deployed to Azure IaaS. You will include Azure security and management services to manage and monitor the operational performance and security of the underlying infrastructure, along with Azure Application Insights to monitor performance, application usage, and identify the cause of any application issues that emerge.
+In this whiteboard design session, you will work with a group to design a solution which combines both pre-built artificial intelligence (AI) (in the form of various Cognitive Services) with custom AI (in the form of services built and deployed with Azure Machine Learning services). You will learn to create intelligent solutions atop unstructured text data by designing and implementing a text analytics pipeline. You will also learn how to build a binary classifier using a simple neural network that can be used to classify the textual data. Also, you will learn how to deploy multiple kinds of predictive services using Azure Machine Learning and learn to integrate with the Computer Vision API and the Text Analytics API from Cognitive Services.
 
 At the end of this whiteboard design session, you will be better able to design solutions leveraging Azure Machine Learning services and Cognitive Services.
 
 ### Hands-on lab
 
-In this hands-on lab, you will implement and deploy a monitoring a web application to Azure IaaS. Azure security and management services will be used to manage and monitor the operational performance and security of the underlying infrastructure. Azure Application Insights will be used to monitor performance, application usage, and identify the cause of any application issues that emerge.
+In this hands-on lab, you will implement a solution which combines both pre-built artificial intelligence (AI) (in the form of various Cognitive Services) with custom AI (in the form of services built and deployed with Azure Machine Learning services). You will learn to create intelligent solutions atop unstructured text data by designing and implementing a text analytics pipeline. You will also learn how to build a binary classifier using a simple neural network that can be used to classify the textual data. Also, you will learn how to deploy multiple kinds of predictive services using Azure Machine Learning and learn to integrate with the Computer Vision API and the Text Analytics API from Cognitive Services.
 
 At the end of this hands-on lab, you will be better able to implement solutions leveraging Azure Machine Learning services and Cognitive Services.
 
