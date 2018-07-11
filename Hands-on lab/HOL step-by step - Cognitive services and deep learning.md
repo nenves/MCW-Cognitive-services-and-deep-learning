@@ -114,8 +114,8 @@ In this exercise, you will setup your Azure Machine Learning Experimentation and
     j.  **Account name**: provide a name for your model management account
 
     k.  **Model Management pricing tier**: select the S1 pricing tier
-    
-        ![The ML Experimentation blade fields are set to the previously defined settings.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image20.png "ML Experimentation blade")
+
+    ![The ML Experimentation blade fields are set to the previously defined settings.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image20.png "ML Experimentation blade")
 
 5.  Select **Create** to provision the Experimentation and Model Management Service. The deployment should take about 2 minutes.
 
