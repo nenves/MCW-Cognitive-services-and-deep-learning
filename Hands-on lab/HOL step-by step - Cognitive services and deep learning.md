@@ -138,12 +138,19 @@ e. Pricing Tier: select `Premium`.
 3. On the New Cluster page, provide the following:
 
     a. Cluster Name: `ailab`
+
     b. Cluster Mode: `Standard`
+
     c. Databricks Runtime Version: `4.3 (includes Apache Spark 2.3.1, Scala 2.11)`
+
     d. Python Version: `3`
+
     e. Driver Type: `Same as worker`
+
     f. Worker Type: `Standard_F4s`
+
     g. Enable autoscaling: `Unchecked`
+
     h: Workers: `2`
 
     ![The New Cluster page configured to create a new cluster with the desired settings.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image3-3.png "New Cluster")
@@ -170,15 +177,18 @@ The notebook you will run depends on certain Python libraries like nltk and gens
 
     ![The list of Interactive Clusters.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image3-5.png "Interactive Clusters")
 
-3. Select the Libraries link and then select Attach New.
+3. Select the Libraries link and then select Attach New. 
 
     ![The Libraries tab showing the Attache New button.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image3-6.png "Attach New")
+
+NOTE: 
+There are interface updates being deployed, if you do not see the Attach New button, instead go to the Azure Databricks menu option in your Workspace (the very top option on the left) and select Import Library. Then select a source of **Upload Python Egg or PyPi** and then provide the Package name specified in the following steps in the PyPi Name text box. Then in the Status on running clusters list, check the checkbox Attach that is listed to the left of your cluster's name to install the library on your cluster. When succesful the Status should read `Attached`.
 
 4. In the Library Source, select **PyPi** and in the Package text box type `nltk` and select Create.
 
     ![The Attach Library dialog showing PyPi as the source and nltk as the package.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image3-6.png "Attach Library")
 
-5. An entry for nltk will appear in the list with a status of installing followed by installed. Select **Attach New** again. As before, select PyPi but this time for pacakage specify `gensim`.
+5. An entry for nltk will appear in the list with a status of installing followed by installed. Select **Attach New** again. As before, select PyPi but this time for package specify `gensim`.
 
 ### Task 2: Read thru and execute the Summarization notebook
 
@@ -191,29 +201,7 @@ The notebook you will run depends on certain Python libraries like nltk and gens
 
 1. Within the Workspace, select the Workspace item in the menu and navigate to the folder where you uploaded the Databricks Archive (which should be [your-name/AI-lab]), and select the notebook called `02 Deploy Summarizer Web Service`. This will open the notebook so you can read and execute the code it contains.
 
-2. Read the instructions at the top of the notebook, and execute the cells as instructed. Remember you can use `SHIFT + ENTER` to execute the currently selected cell, and if you do not have a cluster attached, you will be prompted to attach to the cluster you recently deployed. Note that you will need to attach the azureml-sdk library as instructed in the notebook using the same procedure you followed in Task 1.
-
-
-
-
-
-
-
-    ```sh
-    name: project_environment
-
-    dependencies:
-    - python=3.5.2
-    - scikit-learn
-    - pip:
-    # The API for Azure Machine Learning Model Management Service.
-    # Details: https://github.com/Azure/Machine-Learning-Operationalization
-    - azure-ml-api-sdk==0.1.0a11
-    - azureml.datacollector==0.1.0a13
-    - gensim
-    - tensorflow
-    - tflearn
-    ```
+2. Read the instructions at the top of the notebook, and execute the cells as instructed. Remember you can use `SHIFT + ENTER` to execute the currently selected cell, and if you do not have a cluster attached, you will be prompted to attach to the cluster you recently deployed. **Note that you will be directed to attach the `azureml-sdk[databricks]` library in the notebook using the same procedure you followed in Task 1.**
 
 
 ## Exercise 3: Create and Deploy a TensorFlow Model
