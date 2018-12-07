@@ -30,18 +30,17 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 - [Overview](#overview)
 - [Solution architecture](#solution-architecture)
 - [Requirements](#requirements)
-- [Exercise 1: Setup Azure Machine Learning accounts](#exercise-1-setup-azure-machine-learning-accounts)
-  - [Task 1: Provision Azure Machine Learning Experimentation service](#task-1-provision-azure-machine-learning-experimentation-service)
-  - [Task 2: Create the Azure Machine Learning project](#task-2-create-the-azure-machine-learning-project)
+- [Exercise 1: Setup Azure Databricks Workspace](#exercise-1-setup-azure-databricks-workspace)
+  - [Task 1: Provision Azure Databricks service](#task-1-provision-azure-databricks-service)
+  - [Task 2: Upload the databricks notebook archive](#task-2-upload-the-databricks-notebook-archive)
+  - [Task 3: Provision a cluster](#task-3-provision-a-cluster)
 - [Exercise 2: Create and Deploy an Unsupervised Model](#exercise-2-create-and-deploy-an-unsupervised-model)
-  - [Task 1: Deploy your ACS cluster](#task-1-deploy-your-acs-cluster)
-  - [Task 2: Install dependencies](#task-2-install-dependencies)
-  - [Task 3: Set Visual Studio Code as the project IDE in Workbench](#task-3-set-visual-studio-code-as-the-project-ide-in-workbench)
-  - [Task 4: Create the Summarization service](#task-4-create-the-summarization-service)
-  - [Task 5: Deploy the Summarization service](#task-5-deploy-the-summarization-service)
-- [Exercise 3: Applying TensorFlow](#exercise-3-applying-tensorflow)
-  - [Task 1: Prepare TensorFlow](#task-1-prepare-tensorflow)
-  - [Task 2: Train and deploy the TensorFlow model](#task-2-train-and-deploy-the-tensorflow-model)
+  - [Task 1: Install libraries](#task-1-install-libraries)
+  - [Task 2: Task 2: Read thru and execute the Summarization notebook](#task-2-read-thru-and-execute-the-summarization-notebook)
+  - [Task 3: Provision the Azure Machine Learning Workspace and Create the Summarization service](#task-3-provision-the-azure-machine-learning-workspace-and-create-the-summarization-service)
+- [Exercise 3: Create and Deploy a TensorFlow Model](#exercise-3-create-and-deploy-a-tensorflow-model)
+  - [Task 1: Create a simple TensorFlow based model](#create-a-simple-tensorflow-based-model)
+  - [Task 2: Deploy the TensorFlow model](#task-2-deploy-the-tensorflow-model)
 - [Exercise 4: Completing the solution](#exercise-4-completing-the-solution)
   - [Task 1: Deploy the Computer Vision API](#task-1-deploy-the-computer-vision-api)
   - [Task 2: Deploy the Text Analytics API](#task-2-deploy-the-text-analytics-api)
@@ -79,7 +78,7 @@ Duration: 20 minutes
 
 In this exercise, you will setup your Azure Databricks account and Workspace.
 
-### Task 1: Provision Azure Machine Learning Experimentation service
+### Task 1: Provision Azure Databricks service
 
 1.  Navigate to the Azure Portal
 
