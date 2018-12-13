@@ -106,11 +106,11 @@ In this exercise, you will setup your Azure Databricks account and Workspace.
 
 ![In the Azure Databricks Service blase, provide a workspace name, subscription, resource group, location and pricing tier.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image3-1.png "New blade")
 
-6.  When the deployment completes, navigate to your deployed Azure Databricks service and select **Launch Workspace**. If prompted, sign in using the same credentials you used to acces the Azure Portal.
+6.  When the deployment completes, navigate to your deployed Azure Databricks service and select **Launch Workspace**. If prompted, sign in using the same credentials you used to access the Azure Portal.
 
     ![The Launch Workspace button on the Overview blade of the Azure Databricks Service](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image3-2.png "Launch Workspace")
 
-### Task 2: Upload the databricks notebook archive
+### Task 2: Upload the Databricks notebook archive
 
 1. Within the Workspace, using the command bar on the left, select Workspace, Users and select your username (the entry with house icon).
 
@@ -154,7 +154,7 @@ In this exercise, you will setup your Azure Databricks account and Workspace.
 
     ![The New Cluster page configured to create a new cluster with the desired settings.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image3-3.png "New Cluster")
 
-4. Select **Create Cluster**. This will take about 5 minutes to provision your cluster. The cluster will show a State of Ready when the cluster is available for use.
+4. Select **Create Cluster**. This will take about 5 minutes to provision your cluster. The cluster will show a State of "Ready" when the cluster is available for use.
 
 
 ## Exercise 2: Create and Deploy an Unsupervised Model
@@ -181,7 +181,7 @@ The notebook you will run depends on certain Python libraries like nltk and gens
     ![The Libraries tab showing the Attache New button.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image3-6.png "Attach New")
 
 NOTE: 
-There are interface updates being deployed, if you do not see the Attach New button, instead go to the Azure Databricks menu option in your Workspace (the very top option on the left) and select Import Library. Then select a source of **Upload Python Egg or PyPi** and then provide the Package name specified in the following steps in the PyPi Name text box. Then in the Status on running clusters list, check the checkbox Attach that is listed to the left of your cluster's name to install the library on your cluster. When succesful the Status should read `Attached`.
+There are interface updates being deployed, if you do not see the Attach New button, instead go to the Azure Databricks menu option in your Workspace (the very top option on the left) and select Import Library. Then select a source of **Upload Python Egg or PyPi** and then provide the Package name specified in the following steps in the PyPi Name text box. Then in the Status on running clusters list, check the checkbox Attach that is listed to the left of your cluster's name to install the library on your cluster. When successful the Status should read `Attached`.
 
 4. In the Library Source, select **PyPi** and in the Package text box type `nltk` and select Create.
 
@@ -227,7 +227,7 @@ In this exercise, you will use TensorFlow to construct and train a simple deep n
 
 Duration: 45 minutes
 
-In this exercise, you will perform the final integration with the Computer Vision API and the Text Analytics API along with the Azure Machine Learning Services you previously deployed, to deliver the completed proof of concept solution.
+In this exercise, you will perform the final integration with the Computer Vision API and the Text Analytics API along with the Azure Machine Learning service you previously deployed, to deliver the completed proof of concept solution.
 
 ### Task 1: Deploy the Computer Vision API
 
