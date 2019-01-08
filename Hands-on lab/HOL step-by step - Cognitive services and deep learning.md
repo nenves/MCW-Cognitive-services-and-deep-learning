@@ -80,9 +80,9 @@ In this exercise, you will setup your Azure Databricks account and Workspace.
 
 ### Task 1: Provision Azure Databricks service
 
-1.  Navigate to the Azure Portal
+1.  Navigate to the Azure Portal.
 
-2.  Select **Create a resource**
+2.  Select **Create a resource**.
 
     ![Screenshot of the Create a resource button.](media/azure-portal-create-a-resource.png "Create a resource button")
 
@@ -163,7 +163,6 @@ Duration: 60 minutes
 
 In this exercise, you will create and deploy a web service that uses a pre-trained model to summarize long paragraphs of text. 
 
-
 ### Task 1: Install libraries
 
 The notebook you will run depends on certain Python libraries like nltk and gensim that will need to be installed in your cluster. The following steps walk you thru adding these dependencies. 
@@ -180,8 +179,7 @@ The notebook you will run depends on certain Python libraries like nltk and gens
 
     ![The Libraries tab showing the Attache New button.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image3-6.png "Attach New")
 
-NOTE: 
-There are interface updates being deployed, if you do not see the Attach New button, instead go to the Azure Databricks menu option in your Workspace (the very top option on the left) and select Import Library. Then select a source of **Upload Python Egg or PyPi** and then provide the Package name specified in the following steps in the PyPi Name text box. Then in the Status on running clusters list, check the checkbox Attach that is listed to the left of your cluster's name to install the library on your cluster. When successful the Status should read `Attached`.
+>**Note**: There are interface updates being deployed, if you do not see the Attach New button, instead go to the Azure Databricks menu option in your Workspace (the very top option on the left) and select Import Library. Then select a source of **Upload Python Egg or PyPi** and then provide the Package name specified in the following steps in the PyPi Name text box. Then in the Status on running clusters list, check the checkbox Attach that is listed to the left of your cluster's name to install the library on your cluster. When successful the Status should read `Attached`.
 
 4. In the Library Source, select **PyPi** and in the Package text box type `nltk` and select Create.
 
@@ -248,16 +246,17 @@ In this exercise, you will perform the final integration with the Computer Visio
 
     d.  **Pricing tier**: select S1.
 
-    e.  **Resource group**: select the existing mcwailab resource group\
-        ![The Create blade fields display the previously defined settings.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image60.png "Create blade")
+    e.  **Resource group**: select the existing mcwailab resource group.
+    
+       ![The Create blade fields display the previously defined settings.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image60.png "Create blade")
 
-5.  Select **Create**
+5.  Select **Create**.
 
-6.  When the notification appears that the deployment succeeded, select **Go to resource**
+6.  When the notification appears that the deployment succeeded, select **Go to resource**.
 
     ![A Deployment succeeded notification displays.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image61.png "Notification")
 
-7.  Select **Keys** and then copy the value of Key 1 into notepad or something similar as you will need this value later in the lab
+7.  Select **Keys** and then copy the value of Key 1 into notepad or something similar as you will need this value later in the lab.
 
     ![In the Cognitive Services blade, under Resource Management, Keys is selected. ](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image62.png "Cognitive Services blade")
 
@@ -267,30 +266,31 @@ In this exercise, you will perform the final integration with the Computer Visio
 
 ### Task 2: Deploy the Text Analytics API
 
-1.  Navigate to the Azure Portal in your browser
+1.  Navigate to the Azure Portal in your browser.
 
-2.  Select **Create a resource**
+2.  Select **Create a resource**.
 
-3.  Select **AI + Machine Learning** and then **Text Analytics**
+3.  Select **AI + Machine Learning** and then **Text Analytics**.
 
     ![In the New blade, both AI + Cognitive Services and Text Analytics API are selected.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image64.png "New blade")
 
 4.  On the **Create** blade, provide the following:
 
-    a.  **Name**: provide a unique name for this instance
+    a.  **Name**: provide a unique name for this instance.
 
-    b.  **Subscription**: select your Azure subscription
+    b.  **Subscription**: select your Azure subscription.
 
-    c.  **Location**: select a location nearest your other deployed services
+    c.  **Location**: select a location nearest your other deployed services.
 
-    d.  **Pricing tier**: select S0
+    d.  **Pricing tier**: select S0.
 
-    e.  **Resource group**: select the existing mcw-ai-lab resource group\
-        ![The Create blade fields are set to the previously defined settings.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image65.png "Create blade")
+    e.  **Resource group**: select the existing mcw-ai-lab resource group.
+    
+       ![The Create blade fields are set to the previously defined settings.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image65.png "Create blade")
 
-5.  Select **Create**
+5.  Select **Create**.
 
-6.  When the notification appears that the deployment succeeded, select **Go to resource**
+6.  When the notification appears that the deployment succeeded, select **Go to resource**.
 
     ![A Deployment succeeded notification displays.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image66.png "Notification")
 
@@ -314,19 +314,19 @@ To avoid unexpected charges, it is recommended that you clean up all of your lab
 
 ### Task 1: Clean up lab resources
 
-1.  Navigate to the Azure Portal and locate the `mcwailab` Resource Group you created for this lab
+1.  Navigate to the Azure Portal and locate the `mcwailab` Resource Group you created for this lab.
 
-2.  Select **Delete resource group** from the command bar
+2.  Select **Delete resource group** from the command bar.
 
     ![Screenshot of the Delete resource group button.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image71.png "Delete resource group button")
 
-3.  In the confirmation dialog that appears, enter the name of the resource group and select **Delete**
+3.  In the confirmation dialog that appears, enter the name of the resource group and select **Delete**.
 
 4.  Wait for the confirmation that the Resource Group has been successfully deleted. If you don't wait, and the delete fails for some reason, you may be left with resources running that were not expected. You can monitor using the Notifications dialog, which is accessible from the Alarm icon.
 
     ![The Notifications dialog box has a message stating that the resource group is being deleted.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image72.png "Notifications dialog box")
 
-5.  When the Notification indicates success, the cleanup is complete
+5.  When the Notification indicates success, the cleanup is complete.
 
     ![The Notifications dialog box has a message stating that the resource group has been deleted.](images/Hands-onlabstep-bystep-CognitiveServicesanddeeplearningimages/media/image73.png "Notifications dialog box")
 
