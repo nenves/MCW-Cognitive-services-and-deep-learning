@@ -9,7 +9,7 @@ Whiteboard design session student guide
 </div>
 
 <div class="MCWHeader3">
-June 2018
+December 2018
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -42,11 +42,11 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 #  Cognitive services and deep learning whiteboard design session student guide
 
-## Abstract and learning objectives
+## Abstract and learning objectives 
 
-In this whiteboard design session, you will work with a group to design a solution which combines both pre-built artificial intelligence (AI) in the form of various Cognitive Services, with custom AI in the form of services built and deployed with Azure Machine Learning services. You will learn to create intelligent solutions atop unstructured text data by designing and implementing a text analytics pipeline. You will discover how to build a binary classifier using a simple neural network that can be used to classify the textual data, as well as how to deploy multiple kinds of predictive services using Azure Machine Learning and learn to integrate with the Computer Vision API and the Text Analytics API from Cognitive Services.
+In this whiteboard design session, you will work with a group to design a solution which combines both pre-built artificial intelligence (AI) in the form of various Cognitive Services, with custom AI in the form of services built and deployed with Azure Machine Learning service. You will learn to create intelligent solutions atop unstructured text data by designing and implementing a text analytics pipeline. You will discover how to build a binary classifier using a simple neural network that can be used to classify the textual data, as well as how to deploy multiple kinds of predictive services using Azure Machine Learning service and learn to integrate with the Computer Vision API and the Text Analytics API from Cognitive Services.
 
-At the end of this whiteboard design session, you will be better able to design solutions leveraging Azure Machine Learning services and Cognitive Services.
+At the end of this whiteboard design session, you will be better able to design solutions leveraging the Azure Machine Learning service and Cognitive Services.
 
 ## Step 1: Review the customer case study 
 
@@ -119,8 +119,7 @@ As a first step towards their bigger goals, Contoso would like to build a proof 
 
 ## Step 2: Design a proof of concept solution
 
-**Outcome**
-
+**Outcome** 
 Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format. 
 
 Timeframe: 60 minutes
@@ -139,14 +138,6 @@ Directions: With all participants at your table, respond to the following questi
 _High-level architecture_
 
 1.  Without getting into the details (the following sections will address the details), diagram your initial vision for handling the top-level requirements for processing the claims textual data, photos, and enabling search. You will refine this diagram as you proceed.
-
-_Identifying duplicates in free-text claim data_
-
-1.  How would you recommend Contoso identify "possible duplicates" in the free-response text provided associated with a claim?
-
-2.  Would this require you to build a custom AI model, is there an existing AI model you could use or is there a pre-built AI service you could use?
-
-3.  Describe how you would use this model in processing new text entries and identifying if the text is likely a duplicate of other documents.
 
 _Classifying claim-text data_
 
@@ -178,7 +169,7 @@ _Summarizing claim text_
 
 1.  The team at Contoso has heard about a Python library called gensim that has a summarize function. Given an input of text, it can extract a summary of the desired length. Contoso would like their PoC to implement its summarization functionality initially using gensim. However, the process they follow to deploy the summarization capability should also enable them to replace the use of gensim with another library or with the use of their own custom trained models if desired down the road. Describe how Contoso should deploy the summarization service to meet these requirements?
 
-2.  Can they deploy a predictive web service to Azure Machine Learning services that does not utilize an external model (as in the case with gensim) or would support an unsupervised approach?
+2.  Can they deploy a predictive web service to Azure Machine Learning service that does not utilize an external model (as in the case with gensim) or would support an unsupervised approach?
 
 _Captions, tags and "reading" images_
 
@@ -238,10 +229,9 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 
 |    |            |
-|----------|:-------------:|
+|----------|-------------|
 | **Description** | **Links** |
-| Azure Machine Learning services | <https://docs.microsoft.com/en-us/azure/machine-learning/preview/overview-what-is-azure-ml>  |   |
-| Overview of Azure Machine Learning      |   |
+| Azure Machine Learning service | <https://docs.microsoft.com/en-us/azure/machine-learning/service/overview-what-is-azure-ml>  |   |
 | Deploying Web Services  |  <https://docs.microsoft.com/en-us/azure/machine-learning/preview/model-management-service-deploy> |
 | Overview of TFLearn   | <http://tflearn.org/>   |
 | Overview of TensorFlow  | <https://www.tensorflow.org/>    |
