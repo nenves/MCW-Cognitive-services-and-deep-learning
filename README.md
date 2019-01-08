@@ -43,10 +43,7 @@ At the end of this hands-on lab, you will be better able to present solutions le
 - Computer Vision API
 - Text Analytics API
 - TensorFlow
-- Azure Monitor
-- Log Analytics
-- Azure Application Insights
-- Azure Security Center
+
 
 ## Azure solutions
 
