@@ -7,5 +7,3 @@
 
 [HOL step-by step - Cognitive services and deep learning.html](https://cloudworkshop.blob.core.windows.net/cognitive-deep-learning/Hands-on%20lab/HOL%20step-by%20step%20-%20Cognitive%20services%20and%20deep%20learning.html)
 
-[HOL unguided - Cognitive services and deep learning.html](https://cloudworkshop.blob.core.windows.net/cognitive-deep-learning/Hands-on%20lab/HOL%20unguided%20-%20Cognitive%20services%20and%20deep%20learning.html)
-
