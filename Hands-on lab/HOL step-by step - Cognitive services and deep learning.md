@@ -96,15 +96,15 @@ In this exercise, you will setup your Azure Databricks account and Workspace.
 
 5.  On the **Azure Databricks Service**, enter the following and then select **Create**:
 
-    a. Workspace Name: enter `claims-workspace`.
+    a. **Workspace Name**: Enter `claims-workspace`.
 
-    b. Subscription: choose your Azure subscription.
+    b. **Subscription**: Choose your Azure subscription.
 
-    c. Resource roup: choose Create new and then specify the name `mcwailab`.
+    c. **Resource group**: Choose Create new and then specify the name `mcwailab`.
 
-    d. Location: choose a location near you.
+    d. **Location**: Choose a location near you.
 
-    e. Pricing Tier: select `Premium`.
+    e. **Pricing Tier**: Select `Premium`.
 
 ![In the Azure Databricks Service blase, provide a workspace name, subscription, resource group, location and pricing tier.](media/image3-1.png 'New blade')
 
@@ -138,21 +138,21 @@ In this exercise, you will setup your Azure Databricks account and Workspace.
 
 3. On the New Cluster page, provide the following:
 
-   a. Cluster Name: `ailab`
+   a. **Cluster Name**: ailab
 
-   b. Cluster Mode: `Standard`
+   b. **Cluster Mode**: Standard
 
-   c. Databricks Runtime Version: `5.2 (includes Apache Spark 2.4.0, Scala 2.11)`
+   c. **Databricks Runtime Version**: 5.2 (includes Apache Spark 2.4.0, Scala 2.11)
 
-   d. Python Version: `3`
+   d. **Python Version**: 3
 
-   e. Driver Type: `Same as worker`
+   e. **Driver Type**: Same as worker
 
-   f. Worker Type: `Standard_F4s`
+   f. **Worker Type**: Standard_F4s
 
-   g. Enable autoscaling: `Unchecked`
+   g. **Enable autoscaling**: Unchecked
 
-   h: Workers: `2`
+   h: **Workers**: 2
 
    ![The New Cluster page configured to create a new cluster with the desired settings.](media/image3-3.png 'New Cluster')
 
@@ -251,15 +251,15 @@ In this exercise, you will perform the final integration with the Computer Visio
 
 4.  On the **Create** blade, provide the following:
 
-    a. **Name:** provide a unique name for this instance.
+    a. **Name:** Provide a unique name for this instance.
 
-    b. **Subscription:** select your Azure subscription.
+    b. **Subscription:** Select your Azure subscription.
 
-    c. **Location**: select a location nearest your other deployed services.
+    c. **Location**: Select a location nearest your other deployed services.
 
-    d. **Pricing tier**: select S1.
+    d. **Pricing tier**: Select S1.
 
-    e. **Resource group**: select the existing mcwailab resource group.
+    e. **Resource group**: Select the existing mcwailab resource group.
 
     ![The Create blade fields display the previously defined settings.](media/image60.png 'Create blade')
 
@@ -289,15 +289,15 @@ In this exercise, you will perform the final integration with the Computer Visio
 
 4.  On the **Create** blade, provide the following:
 
-    a. **Name**: provide a unique name for this instance.
+    a. **Name**: Provide a unique name for this instance.
 
-    b. **Subscription**: select your Azure subscription.
+    b. **Subscription**: Select your Azure subscription.
 
-    c. **Location**: select a location nearest your other deployed services.
+    c. **Location**: Select a location nearest your other deployed services.
 
-    d. **Pricing tier**: select S0.
+    d. **Pricing tier**: Select S0.
 
-    e. **Resource group**: select the existing mcw-ai-lab resource group.
+    e. **Resource group**: Select the existing mcw-ai-lab resource group.
 
     ![The Create blade fields are set to the previously defined settings.](media/image65.png 'Create blade')
 
