@@ -166,39 +166,45 @@ In this exercise, you will create and deploy a web service that uses a pre-train
 
 ### Task 1: Install libraries
 
-The notebook you will run depends on certain Python libraries like `nltk` and `gensim` that will need to be installed in your cluster. The following steps walk you thru adding these dependencies.
+The notebook you will run depends on certain Python libraries like `nltk` and `gensim` that will need to be installed in your cluster. The following steps walk you through adding these dependencies.
 
-1. From the left-hand menu in your Workspace, select **Clusters**.
+1.  Within the Workspace, select the Workspace item in the menu and navigate to the folder where you uploaded the Databricks Archive (which should be [your-name/AI-lab]), and select the notebook called `init`. This will open the notebook so you can read and execute the code it contains.
 
-   ![The Clusters menu option.](media/image3-4.png 'Clusters')
+2.  Read the instructions at the top of the notebook, and execute the cell. Remember you can use `SHIFT + ENTER` to execute the currently selected cell, and if you do not have a cluster attached, you will be prompted to attach to the cluster you recently deployed. This will create a file named `init.bash` that installs required libraries on the cluster.
 
-2. In the list of clusters, select your cluster.
+3.  From the left-hand menu in your Workspace, select **Clusters**.
 
-   ![The list of Interactive Clusters.](media/image3-5.png 'Interactive Clusters')
+    ![The Clusters menu option.](media/image3-4.png 'Clusters')
 
-3. Select the Libraries link and then select Install New.
+4.  In the list of clusters, select your cluster.
 
-   ![The Libraries tab showing the Install New button.](media/image3-6.png 'Install New')
+    ![The list of Interactive Clusters.](media/image3-5.png 'Interactive Clusters')
 
-   > **Note**: There are interface updates being deployed, if you do not see the Install New button, instead go to the Azure Databricks menu option in your Workspace (the very top option on the left) and select Import Library. Then select a source of **Upload Python Egg or PyPi** and then provide the Package name specified in the following steps in the PyPi Name text box. Then in the Status on running clusters list, check the checkbox Attach that is listed to the left of your cluster's name to install the library on your cluster. When successful the Status should read `Attached`.
+5.  Select **Edit** to configure the cluster.
 
-4. In the Library Source, select **PyPi** and in the Package text box type `nltk` and select Create.
+    ![The Edit button is highlighted.](media/edit-cluster.png 'Edit cluster')
 
-   ![The Install Library dialog showing PyPi as the source and nltk as the package.](media/install-nltk.png 'Install Library')
+6.  Expand **Advanced Options** at the bottom, then select **Init Scripts**. Enter the following into the Init Script Path, then select **Add**: `dbfs:/databricks/scripts/init.bash`
 
-5. An entry for `nltk` will appear in the list with a status of installing followed by installed. Select **Install New** again. As before, select **PyPi** but this time for package specify `gensim`.
+    ![The Init Scripts tab is selected and the path has been pasted into the Init Script Path.](media/init-scripts.png 'Init Scripts')
 
-   ![The Install Library dialog showing PyPi as the source and gensim as the package.](media/install-gensim.png 'Install Library')
+7.  Select **Confirm and Restart** after adding the Init Script Path.
 
-6. Select **Install New** again. Select **PyPi** as the source, then enter `azureml-sdk[databricks]` as the package name, then select **Install**.
+    ![The Confirm and Restart button is displayed.](media/confirm-and-restart.png 'Confirm and Restart')
 
-7. **Wait until the `azureml-sdk[databricks]` library is finished installing**. Select **Install New** again. Select **PyPi** as the source, then enter `tensorflow` as the package name, then select **Install**.
+8.  After the cluster restarts, select the **Libraries** tab and then select **Install New**.
 
-8. Finally, select **Install New** once more. Select **PyPi** as the source, then enter `tflearn` as the package name, then select **Install**.
+    ![The Libraries tab showing the Install New button.](media/image3-6.png 'Install New')
 
-In the end, you should have the following libraries installed on the cluster:
+    > **Note**: There are interface updates being deployed, if you do not see the Install New button, instead go to the Azure Databricks menu option in your Workspace (the very top option on the left) and select Import Library. Then select a source of **Upload Python Egg or PyPi** and then provide the Package name specified in the following steps in the PyPi Name text box. Then in the Status on running clusters list, check the checkbox Attach that is listed to the left of your cluster's name to install the library on your cluster. When successful the Status should read `Attached`.
 
-![Installed libraries on the cluster.](media/cluster-installed-libraries.png 'Libraries')
+9.  In the Library Source, select **PyPi** and in the Package text box type `azureml-sdk[databricks]` and select Create.
+
+    ![The Install Library dialog showing PyPi as the source and azureml-sdk[databricks] as the package.](media/install-azureml-sdk.png 'Install Library')
+
+10. An entry for `azureml-sdk[databricks]` will appear in the list with a status of installing followed by installed. All the other required libraries are installed through the cluster init script you added.
+
+    ![Installed libraries on the cluster.](media/cluster-installed-library.png 'Libraries')
 
 ### Task 2: Read through and execute the Summarization notebook
 
