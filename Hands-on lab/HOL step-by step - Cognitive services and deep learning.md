@@ -142,7 +142,7 @@ In this exercise, you will setup your Azure Databricks account and Workspace.
 
    b. **Cluster Mode**: Standard
 
-   c. **Databricks Runtime Version**: 5.2 (includes Apache Spark 2.4.0, Scala 2.11)
+   c. **Databricks Runtime Version**: 5.3 (includes Apache Spark 2.4.0, Scala 2.11)
 
    d. **Python Version**: 3
 
@@ -192,20 +192,6 @@ The notebook you will run depends on certain Python libraries like `nltk` and `g
 
     ![The Confirm and Restart button is displayed.](media/confirm-and-restart.png 'Confirm and Restart')
 
-8.  After the cluster restarts, select the **Libraries** tab and then select **Install New**.
-
-    ![The Libraries tab showing the Install New button.](media/image3-6.png 'Install New')
-
-    > **Note**: There are interface updates being deployed, if you do not see the Install New button, instead go to the Azure Databricks menu option in your Workspace (the very top option on the left) and select Import Library. Then select a source of **Upload Python Egg or PyPi** and then provide the Package name specified in the following steps in the PyPi Name text box. Then in the Status on running clusters list, check the checkbox Attach that is listed to the left of your cluster's name to install the library on your cluster. When successful the Status should read `Attached`.
-
-9.  In the Library Source, select **PyPi** and in the Package text box type `azureml-sdk[databricks]` and select Create.
-
-    ![The Install Library dialog showing PyPi as the source and azureml-sdk[databricks] as the package.](media/install-azureml-sdk.png 'Install Library')
-
-10. An entry for `azureml-sdk[databricks]` will appear in the list with a status of installing followed by installed. All the other required libraries are installed through the cluster init script you added.
-
-    ![Installed libraries on the cluster.](media/cluster-installed-library.png 'Libraries')
-
 ### Task 2: Read through and execute the Summarization notebook
 
 1. Within the Workspace, select the Workspace item in the menu and navigate to the folder where you uploaded the Databricks Archive (which should be [your-name/AI-lab]), and select the notebook called `01 Summarize`. This will open the notebook so you can read and execute the code it contains.
@@ -214,11 +200,33 @@ The notebook you will run depends on certain Python libraries like `nltk` and `g
 
 ### Task 3: Provision the Azure Machine Learning Workspace and Create the Summarization service
 
-1. Within the Workspace, select the Workspace item in the menu and navigate to the folder where you uploaded the Databricks Archive (which should be [your-name/AI-lab]), and select the notebook called `02 Deploy Summarizer Web Service`. This will open the notebook so you can read and execute the code it contains.
+1. From the left-hand menu in your Workspace, select **Clusters**.
 
-2. Read the instructions at the top of the notebook, and execute the cells as instructed. Remember you can use `SHIFT + ENTER` to execute the currently selected cell, and if you do not have a cluster attached, you will be prompted to attach to the cluster you recently deployed. **Note that you will be directed to attach the `azureml-sdk[databricks]` library in the notebook using the same procedure you followed in Task 1.**
+   ![The Clusters menu option.](media/image3-4.png 'Clusters')
 
-> Pay attention to the top of the notebook where you are asked to ensure the `Azure Machine Learning Python SDK` (`azureml-sdk[databricks]`) is installed. If you are running this lab in a hosted environment, it will already be installed. Otherwise, follow the posted instructions to install the library, ensuring it is installed and attached to your cluster before you run the cells in the notebook.
+2. In the list of clusters, select your cluster.
+
+   ![The list of Interactive Clusters.](media/image3-5.png 'Interactive Clusters')
+
+3. Select the **Libraries** tab and then select **Install New**.
+
+   ![The Libraries tab showing the Install New button.](media/image3-6.png 'Install New')
+
+   > **Note**: There are interface updates being deployed, if you do not see the Install New button, instead go to the Azure Databricks menu option in your Workspace (the very top option on the left) and select Import Library. Then select a source of **Upload Python Egg or PyPi** and then provide the Package name specified in the following steps in the PyPi Name text box. Then in the Status on running clusters list, check the checkbox Attach that is listed to the left of your cluster's name to install the library on your cluster. When successful the Status should read `Attached`.
+
+4. In the Library Source, select **PyPi** and in the Package text box type `azureml-sdk[databricks]` and select Create.
+
+   ![The Install Library dialog showing PyPi as the source and azureml-sdk[databricks] as the package.](media/install-azureml-sdk.png 'Install Library')
+
+5. An entry for `azureml-sdk[databricks]` will appear in the list with a status of installing followed by installed. All the other required libraries are installed through the cluster init script you added.
+
+   ![Installed libraries on the cluster.](media/cluster-installed-library.png 'Libraries')
+
+6. Within the Workspace, select the Workspace item in the menu and navigate to the folder where you uploaded the Databricks Archive (which should be [your-name/AI-lab]), and select the notebook called `02 Deploy Summarizer Web Service`. This will open the notebook so you can read and execute the code it contains.
+
+7. Read the instructions at the top of the notebook, and execute the cells as instructed. Remember you can use `SHIFT + ENTER` to execute the currently selected cell, and if you do not have a cluster attached, you will be prompted to attach to the cluster you recently deployed.
+
+   > Pay attention to the top of the notebook where you are asked to ensure the `Azure Machine Learning Python SDK` (`azureml-sdk[databricks]`) is installed. You completed this in steps 3 and 4 above.
 
 ## Exercise 3: Create and Deploy a TensorFlow Model
 
@@ -232,7 +240,7 @@ In this exercise, you will use TensorFlow to construct and train a simple deep n
 
 2. Read the instructions at the top of the notebook, and execute the cells as instructed. Remember you can use `SHIFT + ENTER` to execute the currently selected cell, and if you do not have a cluster attached, you will be prompted to attach to the cluster you recently deployed.
 
-> Pay attention to the top of the notebook where you are asked to ensure the `tensorflow` and `tflearn` libraries are installed. If you are running this lab in a hosted environment, they will already be installed. Otherwise, follow the posted instructions to install the libraries, ensuring they are installed and attached to your cluster before you run the cells in the notebook.
+   > Pay attention to the top of the notebook where you are asked to ensure the `tensorflow` and `tflearn` libraries are installed. If you are running this lab in a hosted environment, they will already be installed. Otherwise, follow the posted instructions to install the libraries, ensuring they are installed and attached to your cluster before you run the cells in the notebook.
 
 ### Task 2: Deploy the TensorFlow model
 
