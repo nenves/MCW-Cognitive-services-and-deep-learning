@@ -6,7 +6,7 @@ They would like to start by automatically classifying each claim detail a custom
 
 They would also like to experiment applying sentiment analysis to the claim text. They know most customers are either factual in their description (a neutral sentiment) or slightly unhappy (a more negative sentiment), but believe that a negative sentiment can be an indicator to claim text that involves a more severe situation, which might warrant an expedited review by an agent.
 
-Next, the would like to automatically summarize long claim text. This summarization would enable the agent to get the gist before having to read the full claim and can quickly remind themselves of the claim when revisiting it.
+Next, they would like to automatically summarize long claim text. This summarization would enable the agent to get the gist before having to read the full claim and can quickly remind themselves of the claim when revisiting it.
 
 Finally, they would like to automatically extract information from the photos submitted with the claims to increase their searchability.
 
