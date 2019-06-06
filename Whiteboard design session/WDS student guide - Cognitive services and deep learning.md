@@ -151,7 +151,7 @@ _Classifying claim-text data_
 
 5.  What would a very simple DNN that performs this classification look like? Sketch the graph of input nodes, hidden layer nodes, and output nodes.
 
-6.  Assuming they will be using a fully connected DNN with a softmax activation function to train the classifier using a regression and Keras, pseudo code the code you would write to construct the network you just illustrated.
+6.  Assuming they will be using a fully connected DNN with a sigmoid activation function to train the classifier using Keras, pseudo code the code you would write to construct the network you just illustrated.
 
 7.  Next, pseudo code how they would construct the DNN from the network and fit the model to the data
 
