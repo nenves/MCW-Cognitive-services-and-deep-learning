@@ -451,22 +451,25 @@ _Classifying claim text data_
 6.  Assuming they will be using a fully connected DNN with a sigmoid activation function to train the classifier using Keras, pseudo code the code you would write to construct the network you just illustrated.
 
     ```python
-    net = tflearn.input_data(shape=[None, ...])
-
-    net = tflearn.fully_connected(net, ...)
-
-    net = tflearn.fully_connected(net, ...)
-
-    net = tflearn.fully_connected(net, 2, activation='softmax')
-
-    net = tflearn.regression(net)
+    model = Sequential()
+    
+    model.add(Dense(..., input_dim=..., kernel_regularizer=...))
+    
+    model.add(Activation('relu'))
+    
+    model.add(Dense(2))
+    
+    model.add(Activation('sigmoid'))
     ```
 
-7.  Next, pseudo code how they would construct the DNN from the network and fit the model to the vectorized data and the labels.
+7.  Next, pseudo code how they would define the optimizer, loss function and fit the model to the vectorized data and the labels.
 
     ```python
-    model = tflearn.DNN(net)
-    model.fit(data, labels, ...)
+    opt = keras.optimizers.Adam(lr=...)
+    
+    model.compile(loss='binary_crossentropy', optimizer=opt, metrics=['accuracy'])
+
+    model.fit(X_train, y_train, epochs=..., batch_size=..., validation_data=...)
     ```
 
 8.  With the trained model in hand, pseudo code how the model would be used to predict the class of a given claim text. What would the output of the prediction be? How would you interpret the value?
