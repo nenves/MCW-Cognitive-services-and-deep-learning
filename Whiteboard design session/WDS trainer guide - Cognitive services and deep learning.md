@@ -453,7 +453,7 @@ _Classifying claim text data_
     ```python
     model = Sequential()
     
-    model.add(Dense(..., input_dim=..., kernel_regularizer=...))
+    model.add(Dense(..., input_dim = ..., kernel_regularizer = ...))
     
     model.add(Activation('relu'))
     
@@ -465,11 +465,11 @@ _Classifying claim text data_
 7.  Next, pseudo code how they would define the optimizer, loss function and fit the model to the vectorized data and the labels.
 
     ```python
-    opt = keras.optimizers.Adam(lr=...)
+    opt = keras.optimizers.Adam(lr = ...)
     
-    model.compile(loss='binary_crossentropy', optimizer=opt, metrics=['accuracy'])
+    model.compile(loss = 'binary_crossentropy', optimizer = opt, metrics = ['accuracy'])
 
-    model.fit(X_train, y_train, epochs=..., batch_size=..., validation_data=...)
+    model.fit(X_train, y_train, epochs = ..., batch_size = ..., validation_data = ...)
     ```
 
 8.  With the trained model in hand, pseudo code how the model would be used to predict the class of a given claim text. What would the output of the prediction be? How would you interpret the value?
