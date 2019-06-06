@@ -147,11 +147,11 @@ _Classifying claim-text data_
 
 3.  Contoso understands they should use a classification algorithm for this problem. They have asked if a Deep Neural Network could be trained against the text to recognize home or auto classifications. Could they use a DNN for this?
 
-4.  For this scenario, Contoso has indicated an interest in using TensorFlow, but is concerned about the complexity of jumping right in. They are wondering if TFLearn would provide an easier framework they could use as a stepping stone to the full blown TensorFlow, that would enable them to build TensorFlow compatible models so that they can "graduate" to using TensorFlow when the team is ready?
+4.  For this scenario, Contoso has indicated an interest in using TensorFlow, but is concerned about the complexity of jumping right in. They are wondering if Keras would provide an easier framework they could use as a stepping stone to the full blown TensorFlow, that would enable them to build TensorFlow compatible models so that they can "graduate" to using TensorFlow when the team is ready?
 
 5.  What would a very simple DNN that performs this classification look like? Sketch the graph of input nodes, hidden layer nodes, and output nodes.
 
-6.  Assuming they will be using a fully connected DNN with a softmax activation function to train the classifier using a regression and  TFLearn, pseudo code the code you would write to construct the network you just illustrated.
+6.  Assuming they will be using a fully connected DNN with a softmax activation function to train the classifier using a regression and Keras, pseudo code the code you would write to construct the network you just illustrated.
 
 7.  Next, pseudo code how they would construct the DNN from the network and fit the model to the data
 
@@ -233,7 +233,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 | **Description**                                       | **Links**                                                                                         |
 | Azure Machine Learning service                        | <https://docs.microsoft.com/en-us/azure/machine-learning/service/overview-what-is-azure-ml>       |  |
 | Deploying Web Services                                | <https://docs.microsoft.com/en-us/azure/machine-learning/preview/model-management-service-deploy> |
-| Overview of TFLearn                                   | <http://tflearn.org/>                                                                             |
+| Overview of Keras                                   | <https://keras.io/>                                                                             |
 | Overview of TensorFlow                                | <https://www.tensorflow.org/>                                                                     |
 | Overview of gensim library                            | <https://radimrehurek.com/gensim/>                                                                |
 | Overview of the Computer Vision API Cognitive Service | <https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/home>                  |
