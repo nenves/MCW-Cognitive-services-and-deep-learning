@@ -43,7 +43,8 @@ At the end of this hands-on lab, you will be better able to present solutions le
 - Computer Vision API
 - Text Analytics API
 - TensorFlow
-
+- Keras
+- ONNX
 
 ## Azure solutions
 
