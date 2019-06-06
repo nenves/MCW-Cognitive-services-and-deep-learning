@@ -81,7 +81,7 @@ In this exercise, you will setup your Azure Notebooks Project.
 
 ### Task 1: Upload project files
 
-1.  1. Log in to [Azure Notebooks](https://notebooks.azure.com/).
+1.  Log in to [Azure Notebooks](https://notebooks.azure.com/).
 
 2.  Navigate to **My Projects** page.
 
