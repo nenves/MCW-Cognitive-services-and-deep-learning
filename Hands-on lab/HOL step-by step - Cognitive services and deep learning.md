@@ -33,7 +33,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
   - [Solution architecture](#solution-architecture)
   - [Requirements](#requirements)
   - [Exercise 1: Setup Azure Notebooks Project](#exercise-1-setup-azure-notebooks-project)
-    - [Task 1: Upload project files](#task-1-provision-azure-databricks-service)
+    - [Task 1: Upload project files](#task-1-upload-project-files)
     - [Task 2: Start the Notebook Server](#task-2-start-the-notebook-server)
   - [Exercise 2: Create and Deploy an Unsupervised Model](#exercise-2-create-and-deploy-an-unsupervised-model)
     - [Task 1: Install libraries](#task-1-install-libraries)
