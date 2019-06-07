@@ -87,7 +87,7 @@ In this exercise, you will setup your Azure Notebooks Project.
 
 3.  Select **Upload GitHub Repo**.
 
-4. In the Upload GitHub Repository dialog, for the GitHub repository provide **`https://github.com/shirolkar/MCW-Cognitive-services-and-deep-learning.git`**, and select **Import**. Allow the import a few moments to complete, the dialog will dismiss once the import has completed.
+4. In the Upload GitHub Repository dialog, for the GitHub repository provide **`https://github.com/shirolkar/MCW-Cognitive-services-and-deep-learning.git`** (*note ignore the repo link shown in the below image, use the repo link shown here*) and select **Import**. Allow the import a few moments to complete, the dialog will dismiss once the import has completed.
 
 	<img src="images/az_nb_setup/01.png" width="70%" height="70%" title="Upload GitHub Repo">
 
