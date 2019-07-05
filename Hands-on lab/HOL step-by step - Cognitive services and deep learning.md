@@ -88,7 +88,7 @@ In this exercise, you will setup your Azure Notebooks Project.
 
 4. In the Upload GitHub Repository dialog, for the GitHub repository provide **`https://github.com/shirolkar/MCW-Cognitive-services-and-deep-learning.git`** and select **Import**. Allow the import a few moments to complete, the dialog will dismiss once the import has completed. (TODO: the link in Step 4 needs to be updated once the pull request is updated and merged. For now, please use the link in Step 4 to import the GitHub repo from the fork and ignore the link shown in the image below.)
 	
-	<img src="images/az_nb_setup/01.png" width="70%" height="70%" title="Upload GitHub Repo">
+	![Upload GitHub Repository](images/az_nb_setup/01.png 'Upload GitHub Repository dialog box')
 
 ### Task 2: Start the Notebook Server
 
@@ -96,13 +96,12 @@ In this exercise, you will setup your Azure Notebooks Project.
 
 2. Start your Notebook server on `Free Compute` by clicking on the **Play** icon in the toolbar as shown:
 
-	<img src="images/az_nb_setup/02.png" width="70%" height="70%" title="Start Notebook Server">
+	![Start Notebook Server](images/az_nb_setup/02.png 'Start Notebook Server Icon')
 
 3.  Navigate to the `> MCW-Cognitive-services-and-deep-learning > Hands-on lab > notebooks` folder where you will find all your labfiles.
 
-	<img src="images/az_nb_setup/03.png" width="70%" height="70%" title="Navigate to the notebooks folder">
-
-
+	![Navigate to the notebooks folder](images/az_nb_setup/03.png 'Navigate to the notebooks folder')
+	
 ## Exercise 2: Create and Deploy an Unsupervised Model
 
 Duration: 60 minutes
