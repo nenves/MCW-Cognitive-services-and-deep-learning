@@ -618,7 +618,7 @@ _Enabling search_
 
     While it is true that there is a lot of hype around AI, the ability to deploy solutions that use data, machine learning, and deep learning to create an application with "AI" capabilities is real and is possible in Azure. Azure provides a wide range of services to address the needs of AI from pre-built AI capabilities in Cognitive Services to services that help you to build, train, and deploy your custom AI capabilities using the Azure Machine Learning service and other services from the Microsoft AI stack.
 
-2.  We know that are both pre-built AI and custom AI options. We are confused as to when to choose one over the other?
+2.  We know that are both pre-built AI and custom AI options. We are confused as to when to choose one over the other.
 
     You should consider the pre-built AI options first; however, if you rule them out because they are not fitting your requirements,  then you should explore the custom AI options. The advantage of pre-built AI options like Cognitive Services is that the models they use under the covers do not need to be trained by you, and you do not need to have the data to train them as a pre-requisite.
 
