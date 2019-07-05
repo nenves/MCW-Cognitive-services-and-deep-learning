@@ -24,10 +24,9 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 # Cognitive services and deep learning hands-on lab step-by-step
 
-## Contents
+**Contents**
 
 - [Cognitive services and deep learning hands-on lab step-by-step](#cognitive-services-and-deep-learning-hands-on-lab-step-by-step)
-  - [Contents](#contents)
   - [Abstract and learning objectives](#abstract-and-learning-objectives)
   - [Overview](#overview)
   - [Solution architecture](#solution-architecture)
@@ -87,19 +86,19 @@ In this exercise, you will setup your Azure Notebooks Project.
 
 3.  Select **Upload GitHub Repo**.
 
-4. In the Upload GitHub Repository dialog, for the GitHub repository provide **`https://github.com/shirolkar/MCW-Cognitive-services-and-deep-learning.git`** and select **Import**. Allow the import a few moments to complete, the dialog will dismiss once the import has completed. (TODO: the link in Step 4 needs to be updated once the pull request is updated and merged. For now please use the link in Step 4 to import the GitHub repo from the fork and ignore the link shown in the image below.)
+4. In the Upload GitHub Repository dialog, for the GitHub repository provide **`https://github.com/shirolkar/MCW-Cognitive-services-and-deep-learning.git`** and select **Import**. Allow the import a few moments to complete, the dialog will dismiss once the import has completed. (TODO: the link in Step 4 needs to be updated once the pull request is updated and merged. For now, please use the link in Step 4 to import the GitHub repo from the fork and ignore the link shown in the image below.)
 	
 	<img src="images/az_nb_setup/01.png" width="70%" height="70%" title="Upload GitHub Repo">
 
 ### Task 2: Start the Notebook Server
 
-1. Navigate to your project: `MCW-Cognitive-services-and-deep-learning`
+1. Navigate to your project: `MCW-Cognitive-services-and-deep-learning`.
 
 2. Start your Notebook server on `Free Compute` by clicking on the **Play** icon in the toolbar as shown:
 
 	<img src="images/az_nb_setup/02.png" width="70%" height="70%" title="Start Notebook Server">
 
-3.  Navigate to the `> MCW-Cognitive-services-and-deep-learning > Hands-on lab > notebooks` folder where you will find all your labfiles
+3.  Navigate to the `> MCW-Cognitive-services-and-deep-learning > Hands-on lab > notebooks` folder where you will find all your labfiles.
 
 	<img src="images/az_nb_setup/03.png" width="70%" height="70%" title="Navigate to the notebooks folder">
 
@@ -143,7 +142,7 @@ In this exercise, you will use Keras to construct and train a simple deep neural
 
 2. Read the instructions at the top of the notebook, and execute the cells as instructed.
 
-   > Pay attention to the top of the notebook and check the version of  `tensorflow` and `keras` libraries. Tensorflow version should be >= 1.12.2 and Keras version should be >= 2.2.4.
+   >**Note**: Pay attention to the top of the notebook and check the version of  `tensorflow` and `keras` libraries. Tensorflow version should be >= 1.12.2 and Keras version should be >= 2.2.4.
 
 ### Task 2: Deploy the Keras model
 
