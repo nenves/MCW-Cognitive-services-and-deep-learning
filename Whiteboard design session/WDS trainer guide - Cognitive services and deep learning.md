@@ -9,7 +9,7 @@ Whiteboard design session trainer guide
 </div>
 
 <div class="MCWHeader3">
-March 2019
+June 2019
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -24,10 +24,8 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 # Cognitive services and deep learning whiteboard design session trainer guide
 
-## Contents
+**Contents**
 
-- [Cognitive services and deep learning whiteboard design session trainer guide](#cognitive-services-and-deep-learning-whiteboard-design-session-trainer-guide)
-  - [Contents](#contents)
 - [Trainer information](#trainer-information)
   - [Role of the trainer](#role-of-the-trainer)
   - [Whiteboard design session flow](#whiteboard-design-session-flow)
@@ -62,33 +60,35 @@ Thank you for taking time to support the whiteboard design sessions as a trainer
 
 An amazing trainer:
 
--   Creates a safe environment in which learning can take place
+-   Creates a safe environment in which learning can take place.
 
--   Stimulates the participant's thinking
+-   Stimulates the participant's thinking.
 
--   Involves the participant in the learning process
+-   Involves the participant in the learning process.
 
--   Manages the learning process (on time, on topic, and adjusting to benefit participants)
+-   Manages the learning process (on time, on topic, and adjusting to benefit participants).
 
--   Ensures individual participant accountability
+-   Ensures individual participant accountability.
 
--   Ties it all together for the participant
+-   Ties it all together for the participant.
 
--   Provides insight and experience to the learning process
+-   Provides insight and experience to the learning process.
 
--   Effectively leads the whiteboard design session discussion
+-   Effectively leads the whiteboard design session discussion.
 
--   Monitors quality and appropriateness of participant deliverables
+-   Monitors quality and appropriateness of participant deliverables.
 
--   Effectively leads the feedback process
+-   Effectively leads the feedback process.
 
-## Whiteboard design session flow
+## Whiteboard design session flow 
 
 Each whiteboard design session uses the following flow:
 
 **Step 1: Review the customer case study (15 minutes)**
 
-Outcome: Analyze your customer's needs
+**Outcome**
+
+Analyze your customer's needs.
 
 -   Customer's background, situation, needs and technical requirements
 
@@ -98,19 +98,23 @@ Outcome: Analyze your customer's needs
 
 **Step 2: Design a proof of concept solution (60 minutes)**
 
-Outcome: Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format.
+**Outcome**
 
--   Determine your target customer audience
+Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format.
 
--   Determine customer's business needs to address your solution
+-   Determine your target customer audience.
 
--   Design and diagram your solution
+-   Determine customer's business needs to address your solution.
 
--   Prepare to present your solution
+-   Design and diagram your solution.
+
+-   Prepare to present your solution.
 
 **Step 3: Present the solution (30 minutes)**
 
-Outcome: Present solution to your customer
+**Outcome**
+
+Present solution to your customer:
 
 -   Present solution
 
@@ -126,15 +130,15 @@ Outcome: Present solution to your customer
 
 Before conducting your first whiteboard design session:
 
--   Read the Student guide (including the case study) and Trainer guide
+-   Read the Student guide (including the case study) and Trainer guide.
 
--   Become familiar with all key points and activities
+-   Become familiar with all key points and activities.
 
--   Plan the point you want to stress, which questions you want to drive, transitions, and be ready to answer questions
+-   Plan the point you want to stress, which questions you want to drive, transitions, and be ready to answer questions.
 
--   Prior to the whiteboard design session, discuss the case study to pick up more ideas
+-   Prior to the whiteboard design session, discuss the case study to pick up more ideas.
 
--   Make notes for later
+-   Make notes for later.
 
 ## During the whiteboard design session: Tips for an effective whiteboard design session
 
@@ -144,7 +148,7 @@ Before conducting your first whiteboard design session:
 
 When participants are doing activities, you can **look ahead to refresh your memory**.
 
--   **Adjust activity and whiteboard design session pace** as needed to allow time for presenting, feedback, and sharing
+-   **Adjust activity and whiteboard design session pace** as needed to allow time for presenting, feedback, and sharing.
 
 -   **Add examples, points, and stories** from your own experience. Think about stories you can share that help you make your points clearly and effectively.
 
@@ -156,7 +160,7 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 **Ask questions** and get them to share to fully involve your group in the learning process.
 
-**Ask first**, whenever possible. Before launching into a topic, learn your audience's opinions about it and experiences with it. Asking first enables you to assess their level of knowledge and experience and leaves them more open to what you are presenting.
+**Ask first**, whenever possible. Before launching into a topic, learn your audience's opinions about it and experiences with it. Asking first enables you to assess their level of knowledge and experience, and leaves them more open to what you are presenting.
 
 **Wait for responses**. If you ask a question such as, "What's your experience with (fill in the blank)?" then wait. Do not be afraid of a little silence. If you leap into the silence, your participants will feel you are not serious about involving them and will become passive. Give participants a chance to think, and if no one answers, patiently ask again. You will usually get a response.
 
@@ -170,17 +174,19 @@ At the end of this whiteboard design session, you will be better able to design 
 
 ## Step 1: Review the customer case study 
 
-**Outcome** 
+**Outcome**
 
-Analyze your customer’s needs.
+Analyze your customer's needs.
 
-Timeframe: 15 minutes 
+Timeframe: 15 minutes
 
-Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips. 
+Directions:  With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips.
 
-1.  Meet your table participants and trainer 
-2.  Read all of the directions for steps 1–3 in the student guide 
-3.  As a table team, review the following customer case study
+1.  Meet your table participants and trainer.
+
+2.  Read all of the directions for steps 1-3 in the student guide.
+
+3.  As a table team, review the following customer case study.
 
 ### Customer situation
 
@@ -236,24 +242,25 @@ As a first step towards their bigger goals, Contoso would like to build a proof 
 
 ![The Predicting a classification from text diagram has Documents, which points to Text Normalization, which points to Feature Extraction, which points to Classification Model, which points to Document Labels. Vectors points to a table of words and percentages.](images/Whiteboarddesignsessiontrainerguide-CognitiveServicesanddeeplearningimages/media/image3.png "Predicting a classification from text diagram")
 
-
 ## Step 2: Design a proof of concept solution
 
-**Outcome** 
-Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format. 
+**Outcome**
+
+Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format.
 
 Timeframe: 60 minutes
 
 **Business needs**
 
-Directions: With all participants at your table, answer the following questions and list the answers on a flip chart. 
+Directions: With all participants at your table, answer the following questions and list the answers on a flip chart:
 
-1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers? 
+1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers?
+
 2.  What customer business needs do you need to address with your solution?
 
-**Design** 
+**Design**
 
-Directions: With all participants at your table, respond to the following questions on a flip chart.
+Directions: With all participants at your table, respond to the following questions on a flip chart:
 
 _High-level architecture_
 
@@ -267,11 +274,11 @@ _Classifying claim-text data_
 
 3.  Contoso understands they should use a classification algorithm for this problem. They have asked if a Deep Neural Network could be trained against the text to recognize home or auto classifications. Could they use a DNN for this?
 
-4.  For this scenario, Contoso has indicated an interest in using TensorFlow, but is concerned about the complexity of jumping right in. They are wondering if TFLearn would provide an easier framework they could use as a stepping stone to the full blown TensorFlow, that would enable them to build TensorFlow compatible models so that they can "graduate" to using TensorFlow when the team is ready?
+4.  For this scenario, Contoso has indicated an interest in using TensorFlow, but is concerned about the complexity of jumping right in. They are wondering if Keras would provide an easier framework they could use as a stepping stone to the full blown TensorFlow, that would enable them to build TensorFlow compatible models so that they can "graduate" to using TensorFlow when the team is ready?
 
 5.  What would a very simple DNN that performs this classification look like? Sketch the graph of input nodes, hidden layer nodes, and output nodes.
 
-6.  Assuming they will be using a fully connected DNN with a softmax activation function to train the classifier using a regression and  TFLearn, pseudo code the code you would write to construct the network you just illustrated.
+6.  Assuming they will be using a fully connected DNN with a sigmoid activation function to train the classifier using Keras, pseudo code the code you would write to construct the network you just illustrated.
 
 7.  Next, pseudo code how they would construct the DNN from the network and fit the model to the data
 
@@ -309,35 +316,41 @@ _Enabling search_
 
 **Prepare**
 
-Directions: With all participants at your table: 
+Directions: With all participants at your table:
 
-1.  Identify any customer needs that are not addressed with the proposed solution 
-2.  Identify the benefits of your solution
-3.  Determine how you will respond to the customer’s objections 
+1.  Identify any customer needs that are not addressed with the proposed solution.
 
-Prepare a 15-minute chalk-talk style presentation to the customer. 
+2.  Identify the benefits of your solution.
+
+3.  Determine how you will respond to the customer's objections.
+
+Prepare a 15-minute chalk-talk style presentation to the customer.
 
 ## Step 3: Present the solution
 
 **Outcome**
- 
+
 Present a solution to the target customer audience in a 15-minute chalk-talk format.
 
 Timeframe: 30 minutes
 
-**Presentation** 
+**Presentation**
 
 Directions:
 
-1.  Pair with another table
-2.  One table is the Microsoft team and the other table is the customer
-3.  The Microsoft team presents their proposed solution to the customer
-4.  The customer makes one of the objections from the list of objections
-5.  The Microsoft team responds to the objection
-6.  The customer team gives feedback to the Microsoft team
-7.  Tables switch roles and repeat Steps 2–6
+1.  Pair with another table.
 
+2.  One table is the Microsoft team and the other table is the customer.
 
+3.  The Microsoft team presents their proposed solution to the customer.
+
+4.  The customer makes one of the objections from the list of objections.
+
+5.  The Microsoft team responds to the objection.
+
+6.  The customer team gives feedback to the Microsoft team.
+
+7.  Tables switch roles and repeat Steps 2-6.
 
 ##  Wrap-up 
 
@@ -353,7 +366,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 | **Description**                                       | **Links**                                                                                         |
 | Azure Machine Learning service                        | <https://docs.microsoft.com/en-us/azure/machine-learning/service/overview-what-is-azure-ml>       |  |
 | Deploying Web Services                                | <https://docs.microsoft.com/en-us/azure/machine-learning/preview/model-management-service-deploy> |
-| Overview of TFLearn                                   | <http://tflearn.org/>                                                                             |
+| Overview of Keras                                   | <https://keras.io/>                                                                             |
 | Overview of TensorFlow                                | <https://www.tensorflow.org/>                                                                     |
 | Overview of gensim library                            | <https://radimrehurek.com/gensim/>                                                                |
 | Overview of the Computer Vision API Cognitive Service | <https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/home>                  |
@@ -364,43 +377,43 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 ## Step 1: Review the customer case study
 
--   Check in with your table participants to introduce yourself as the trainer
+-   Check in with your table participants to introduce yourself as the trainer.
 
 -   Ask, "What questions do you have about the customer case study?"
 
--   Briefly review the steps and timeframes of the whiteboard design session
+-   Briefly review the steps and timeframes of the whiteboard design session.
 
--   Ready, set, go! Let the table participants begin
+-   Ready, set, go! Let the table participants begin.
 
 ## Step 2: Design a proof of concept solution
 
--   Check in with your tables to ensure that they are transitioning from step to step on time
+-   Check in with your tables to ensure that they are transitioning from step to step on time.
 
--   Provide some feedback on their responses to the business needs and design
+-   Provide some feedback on their responses to the business needs and design.
 
-    -   Try asking questions first that will lead the participants to discover the answers on their own
+    -   Try asking questions first that will lead the participants to discover the answers on their own.
 
--   Provide feedback for their responses to the customer's objections
+-   Provide feedback for their responses to the customer's objections.
 
-    -   Try asking questions first that will lead the participants to discover the answers on their own
+    -   Try asking questions first that will lead the participants to discover the answers on their own.
 
 ## Step 3: Present the solution
 
--   Determine which table will be paired with your table before Step 3 begins
+-   Determine which table will be paired with your table before Step 3 begins.
 
--   For the first round, assign one table as the Microsoft team and the other table as the customer
+-   For the first round, assign one table as the presenting team and the other table as the customer.
 
--   Have the presenting team present their solution to the customer team 
+-   Have the presenting team present their solution to the customer team.
 
-    -   Have the customer team provide one objection for the presenting team to respond to
+    -   Have the customer team provide one objection for the presenting team to respond to.
 
-    -   The presentation, objections, and feedback should take no longer than 15 minutes
+    -   The presentation, objections, and feedback should take no longer than 15 minutes.
 
-    -   If needed, the trainer may also provide feedback
+    -   If needed, the trainer may also provide feedback.
 
 ## Wrap-up
 
--   Have the table participants reconvene with the larger session group to hear the facilitator/SME share the following preferred solution
+-   Have the table participants reconvene with the larger session group to hear the facilitator/SME share the following preferred solution.
 
 ##  Preferred target audience
 
@@ -416,7 +429,7 @@ _High-level architecture_
 
 After speaking with its team at Microsoft, Contoso decided to design their PoC solution in Azure. They would continue to use the web app and SQL database that they already have running in Azure to handle claim submissions. They could build a claim enrichment pipeline by invoking a sequence of Azure Functions, where each of the coordinates calls to various AI-powered services.
 
- ![The High-level architectural solution begins with a Claim, which points to Jupyter notebook. Jupyter then points to Computer Vision, Text Analytics, and Containerized Services, which includes a Classification Service and a Summary Service that both process claim text.](images/Whiteboarddesignsessiontrainerguide-CognitiveServicesanddeeplearningimages/media/image4.png "High-level architectural solution")
+ ![The High-level architectural solution begins with a Claim, which points to Jupyter notebook. Jupyter then points to Computer Vision, Text Analytics, and Containerized Services, which includes a Classification Service and a Summary Service that both process claim text.](images/Whiteboarddesignsessiontrainerguide-CognitiveServicesanddeeplearningimages/media/image4.jpg "High-level architectural solution")
 
 The claim image processing functions would invoke the Computer Vision Cognitive Service for automatically creating the caption and the tags from any supplied claim images. A mixture of pre-built AI, in the form of Cognitive Services and custom AI in the form of Azure ML services, would be used to process the claim text. The models used for processing the claims text would be trained in Azure Databricks notebooks. These models could also then be directly deployed from Azure Databricks using the Azure Machine Learning Service Python SDK. Azure Functions would be used to coordinate the calls to the classifications and summary AI services, which would run as containerized web services in Azure Container Service, while the Text Analytics API could be invoked directly to provide a sentiment score for each claim text.
 
@@ -440,33 +453,36 @@ _Classifying claim text data_
 
     Yes, they could build a DNN that performs classification against the document tensors (or vectors of word frequencies).
 
-4.  For this scenario, Contoso has indicated an interest in using TensorFlow, but is concerned about the complexity of jumping right in. They are wondering if TFLearn would provide an easier framework they could use as a stepping stone to the full-blown TensorFlow, which would enable them to build TensorFlow compatible models so that they can "graduate" to using TensorFlow when the team is ready.
+4.  For this scenario, Contoso has indicated an interest in using TensorFlow, but is concerned about the complexity of jumping right in. They are wondering if Keras would provide an easier framework they could use as a stepping stone to the full-blown TensorFlow, which would enable them to build TensorFlow compatible models so that they can "graduate" to using TensorFlow when the team is ready.
 
-    TensorFlow is a robust framework for performing machine learning, including building neural networks. The TFLearn library builds upon Tensorflow and provides an easy-to-use and understand high-level API for implementing deep neural networks, complete with tutorials and examples. Models built with TFLearn are TensorFlow models, so if they choose to move fully towards the lower level TensorFlow API's, then they could do so without having to re-create the models.
+    TensorFlow is a robust framework for performing machine learning, including building neural networks. The Keras library builds upon Tensorflow and provides an easy-to-use and understand high-level API for implementing deep neural networks, complete with tutorials and examples. Models built with Keras are TensorFlow models, so if they choose to move fully towards the lower level TensorFlow API's, then they could do so without having to re-create the models.
 
 5.  What would a very simple DNN that performs this classification look like? Sketch the graph of input nodes, hidden layer nodes, and output nodes.
 
     ![Input of terms (size of vocab) nodes point to hidden layers nodes, which point to output layer (binary classifier has two outputs) nodes: 1 (auto), and 0 (home).](images/Whiteboarddesignsessiontrainerguide-CognitiveServicesanddeeplearningimages/media/image7.png "Graph of input nodes, hidden layer nodes, and output nodes")
 
-6.  Assuming they will be using a fully connected DNN with a softmax activation function to train the classifier using a regression and TFLearn, pseudo code the code you would write to construct the network you just illustrated.
+6.  Assuming they will be using a fully connected DNN with a sigmoid activation function to train the classifier using Keras, pseudo code the code you would write to construct the network you just illustrated.
 
     ```python
-    net = tflearn.input_data(shape=[None, ...])
-
-    net = tflearn.fully_connected(net, ...)
-
-    net = tflearn.fully_connected(net, ...)
-
-    net = tflearn.fully_connected(net, 2, activation='softmax')
-
-    net = tflearn.regression(net)
+    model = Sequential()
+    
+    model.add(Dense(..., input_dim = ..., kernel_regularizer = ...))
+    
+    model.add(Activation('relu'))
+    
+    model.add(Dense(2))
+    
+    model.add(Activation('sigmoid'))
     ```
 
-7.  Next, pseudo code how they would construct the DNN from the network and fit the model to the vectorized data and the labels.
+7.  Next, pseudo code how they would define the optimizer, loss function and fit the model to the vectorized data and the labels.
 
     ```python
-    model = tflearn.DNN(net)
-    model.fit(data, labels, ...)
+    opt = keras.optimizers.Adam(lr = ...)
+    
+    model.compile(loss = 'binary_crossentropy', optimizer = opt, metrics = ['accuracy'])
+
+    model.fit(X_train, y_train, epochs = ..., batch_size = ..., validation_data = ...)
     ```
 
 8.  With the trained model in hand, pseudo code how the model would be used to predict the class of a given claim text. What would the output of the prediction be? How would you interpret the value?
@@ -602,7 +618,7 @@ _Enabling search_
 
     While it is true that there is a lot of hype around AI, the ability to deploy solutions that use data, machine learning, and deep learning to create an application with "AI" capabilities is real and is possible in Azure. Azure provides a wide range of services to address the needs of AI from pre-built AI capabilities in Cognitive Services to services that help you to build, train, and deploy your custom AI capabilities using the Azure Machine Learning service and other services from the Microsoft AI stack.
 
-2.  We know that are both pre-built AI and custom AI options. We are confused as to when to choose one over the other?
+2.  We know that are both pre-built AI and custom AI options. We are confused as to when to choose one over the other.
 
     You should consider the pre-built AI options first; however, if you rule them out because they are not fitting your requirements,  then you should explore the custom AI options. The advantage of pre-built AI options like Cognitive Services is that the models they use under the covers do not need to be trained by you, and you do not need to have the data to train them as a pre-requisite.
 

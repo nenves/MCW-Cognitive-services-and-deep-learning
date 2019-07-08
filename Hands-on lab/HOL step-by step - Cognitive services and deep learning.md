@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-March 2019
+June 2019
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -24,25 +24,23 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 # Cognitive services and deep learning hands-on lab step-by-step
 
-## Contents
+**Contents**
 
 - [Cognitive services and deep learning hands-on lab step-by-step](#cognitive-services-and-deep-learning-hands-on-lab-step-by-step)
-  - [Contents](#contents)
   - [Abstract and learning objectives](#abstract-and-learning-objectives)
   - [Overview](#overview)
   - [Solution architecture](#solution-architecture)
   - [Requirements](#requirements)
-  - [Exercise 1: Setup Azure Databricks Workspace](#exercise-1-setup-azure-databricks-workspace)
-    - [Task 1: Provision Azure Databricks service](#task-1-provision-azure-databricks-service)
-    - [Task 2: Upload the Databricks notebook archive](#task-2-upload-the-databricks-notebook-archive)
-    - [Task 3: Provision a cluster](#task-3-provision-a-cluster)
+  - [Exercise 1: Setup Azure Notebooks Project](#exercise-1-setup-azure-notebooks-project)
+    - [Task 1: Upload project files](#task-1-upload-project-files)
+    - [Task 2: Start the Notebook Server](#task-2-start-the-notebook-server)
   - [Exercise 2: Create and Deploy an Unsupervised Model](#exercise-2-create-and-deploy-an-unsupervised-model)
     - [Task 1: Install libraries](#task-1-install-libraries)
     - [Task 2: Read through and execute the Summarization notebook](#task-2-read-through-and-execute-the-summarization-notebook)
     - [Task 3: Provision the Azure Machine Learning Workspace and Create the Summarization service](#task-3-provision-the-azure-machine-learning-workspace-and-create-the-summarization-service)
-  - [Exercise 3: Create and Deploy a TensorFlow Model](#exercise-3-create-and-deploy-a-tensorflow-model)
-    - [Task 1: Create a simple TensorFlow based model](#task-1-create-a-simple-tensorflow-based-model)
-    - [Task 2: Deploy the TensorFlow model](#task-2-deploy-the-tensorflow-model)
+  - [Exercise 3: Create and Deploy a Keras Model](#exercise-3-create-and-deploy-a-keras-model)
+    - [Task 1: Create a simple Keras based model](#task-1-create-a-simple-keras-based-model)
+    - [Task 2: Deploy the Keras model](#task-2-deploy-the-keras-model)
   - [Exercise 4: Completing the solution](#exercise-4-completing-the-solution)
     - [Task 1: Deploy the Computer Vision API](#task-1-deploy-the-computer-vision-api)
     - [Task 2: Deploy the Text Analytics API](#task-2-deploy-the-text-analytics-api)
@@ -62,9 +60,9 @@ In this workshop, you will help Contoso Ltd. build a proof of concept that shows
 
 ## Solution architecture
 
-The high-level architecture of the solution is illustrated in the diagram. The lab is performed within the context of a notebook running within Azure Databricks. Various notebooks are built to test the integration with the Cognitive Services listed, to train custom ML services, and to integrate the results in a simple user interface that shows the result of processing the claim with all of the AI services involved.
+The high-level architecture of the solution is illustrated in the diagram. The lab is performed within the context of a notebook running within Azure Notebooks. Various notebooks are built to test the integration with the Cognitive Services listed, to train custom ML services, and to integrate the results in a simple user interface that shows the result of processing the claim with all of the AI services involved.
 
-![The High-level architectural solution begins with a Claim, which us submitted for processing using a notebook in Azure Databricks. This notebook coordinates the calls to Computer Vision, Text Analytics, and Containerized Services, which includes a Classification Service and a Summary Service that both process claim text.](media/image2.png 'High-level architectural solution')
+![The High-level architectural solution begins with a Claim, which us submitted for processing using a notebook in Azure Databricks. This notebook coordinates the calls to Computer Vision, Text Analytics, and Containerized Services, which includes a Classification Service and a Summary Service that both process claim text.](media/image2.jpg 'High-level architectural solution')
 
 ## Requirements
 
@@ -74,90 +72,36 @@ The high-level architecture of the solution is illustrated in the diagram. The l
 
     b. Subscriptions with access limited to a single resource group will not work. You will need the ability to deploy multiple resource groups.
 
-## Exercise 1: Setup Azure Databricks Workspace
+## Exercise 1: Setup Azure Notebooks Project
 
 Duration: 20 minutes
 
-In this exercise, you will setup your Azure Databricks account and Workspace.
+In this exercise, you will setup your Azure Notebooks Project.
 
-### Task 1: Provision Azure Databricks service
+### Task 1: Upload project files
 
-1.  Navigate to the Azure Portal.
+1.  Log in to [Azure Notebooks](https://notebooks.azure.com/).
 
-2.  Select **Create a resource**.
+2.  Navigate to **My Projects** page.
 
-    ![Screenshot of the Create a resource button.](media/azure-portal-create-a-resource.png 'Create a resource button')
+3.  Select **Upload GitHub Repo**.
 
-3.  In the search box, enter **Azure Databricks** and then select the matching entry that appears with the same name.
+4. In the Upload GitHub Repository dialog, for the GitHub repository provide **`https://github.com/shirolkar/MCW-Cognitive-services-and-deep-learning.git`** and select **Import**. Allow the import a few moments to complete, the dialog will dismiss once the import has completed. (TODO: the link in Step 4 needs to be updated once the pull request is updated and merged. For now, please use the link in Step 4 to import the GitHub repo from the fork and ignore the link shown in the image below.)
+	
+	![Upload GitHub Repository](images/az_nb_setup/01.png 'Upload GitHub Repository dialog box')
 
-    ![In the New blade, Azure Databricks is typed into the search box.](media/image3.png 'New blade')
+### Task 2: Start the Notebook Server
 
-4.  On the **Azure Databricks** blade, select **Create**.
+1. Navigate to your project: `MCW-Cognitive-services-and-deep-learning`.
 
-5.  On the **Azure Databricks Service**, enter the following and then select **Create**:
+2. Start your Notebook server on `Free Compute` by clicking on the **Play** icon in the toolbar as shown:
 
-    a. **Workspace Name**: Enter `claims-workspace`.
+	![Start Notebook Server](images/az_nb_setup/02.png 'Start Notebook Server Icon')
 
-    b. **Subscription**: Choose your Azure subscription.
+3.  Navigate to the `> MCW-Cognitive-services-and-deep-learning > Hands-on lab > notebooks` folder where you will find all your labfiles.
 
-    c. **Resource group**: Choose Create new and then specify the name `mcwailab`.
-
-    d. **Location**: Choose a location near you.
-
-    e. **Pricing Tier**: Select `Premium`.
-
-![In the Azure Databricks Service blase, provide a workspace name, subscription, resource group, location and pricing tier.](media/image3-1.png 'New blade')
-
-6.  When the deployment completes, navigate to your deployed Azure Databricks service and select **Launch Workspace**. If prompted, sign in using the same credentials you used to access the Azure Portal.
-
-    ![The Launch Workspace button on the Overview blade of the Azure Databricks Service](media/image3-2.png 'Launch Workspace')
-
-### Task 2: Upload the Databricks notebook archive
-
-1. Within the Workspace, using the command bar on the left, select Workspace, Users and select your username (the entry with house icon).
-
-2. In the blade that appears, select the downwards pointing chevron next to your name, and select Import.
-
-3. On the Import Notebooks dialog, select URL and paste in the following URL:
-
-   ```
-   https://github.com/Microsoft/MCW-Cognitive-services-and-deep-learning/blob/master/Hands-on%20lab/media/notebooks/AI-Lab.dbc?raw=true
-   ```
-
-4. Select Import.
-
-5. A folder named after the archive should appear. Select that folder.
-
-6. The folder will contain one or more notebooks. These are the notebooks you will use in completing this lab.
-
-### Task 3: Provision a cluster
-
-1. Within the Workspace, from the menu on the left, select Clusters.
-
-2. Select **+ Create Cluster**.
-
-3. On the New Cluster page, provide the following:
-
-   a. **Cluster Name**: ailab
-
-   b. **Cluster Mode**: Standard
-
-   c. **Databricks Runtime Version**: 5.3 (includes Apache Spark 2.4.0, Scala 2.11)
-
-   d. **Python Version**: 3
-
-   e. **Driver Type**: Same as worker
-
-   f. **Worker Type**: Standard_F4s
-
-   g. **Enable autoscaling**: Unchecked
-
-   h: **Workers**: 2
-
-   ![The New Cluster page configured to create a new cluster with the desired settings.](media/image3-3.png 'New Cluster')
-
-4. Select **Create Cluster**. This will take about 5 minutes to provision your cluster. The cluster will show a State of "Ready" when the cluster is available for use.
-
+	![Navigate to the notebooks folder](images/az_nb_setup/03.png 'Navigate to the notebooks folder')
+	
 ## Exercise 2: Create and Deploy an Unsupervised Model
 
 Duration: 60 minutes
@@ -166,87 +110,45 @@ In this exercise, you will create and deploy a web service that uses a pre-train
 
 ### Task 1: Install libraries
 
-The notebook you will run depends on certain Python libraries like `nltk` and `gensim` that will need to be installed in your cluster. The following steps walk you through adding these dependencies.
+The notebooks you will run depends on certain Python libraries like `azureml-sdk`, `onnxruntime` and `nltk` that will need to be installed. The following steps walk you through adding these dependencies.
 
-1.  Within the Workspace, select the Workspace item in the menu and navigate to the folder where you uploaded the Databricks Archive (which should be [your-name/AI-lab]), and select the notebook called `init`. This will open the notebook so you can read and execute the code it contains.
+1.  Within the `notebooks` folder, click the notebook called `00 init`. This will open the notebook so you can read and execute the code it contains.
 
-2.  Read the instructions at the top of the notebook, and execute the cell. Remember you can use `SHIFT + ENTER` to execute the currently selected cell, and if you do not have a cluster attached, you will be prompted to attach to the cluster you recently deployed. This will create a file named `init.bash` that installs required libraries on the cluster.
-
-3.  From the left-hand menu in your Workspace, select **Clusters**.
-
-    ![The Clusters menu option.](media/image3-4.png 'Clusters')
-
-4.  In the list of clusters, select your cluster.
-
-    ![The list of Interactive Clusters.](media/image3-5.png 'Interactive Clusters')
-
-5.  Select **Edit** to configure the cluster.
-
-    ![The Edit button is highlighted.](media/edit-cluster.png 'Edit cluster')
-
-6.  Expand **Advanced Options** at the bottom, then select **Init Scripts**. Enter the following into the Init Script Path, then select **Add**: `dbfs:/databricks/scripts/init.bash`
-
-    ![The Init Scripts tab is selected and the path has been pasted into the Init Script Path.](media/init-scripts.png 'Init Scripts')
-
-7.  Select **Confirm and Restart** after adding the Init Script Path.
-
-    ![The Confirm and Restart button is displayed.](media/confirm-and-restart.png 'Confirm and Restart')
+2.  Run each cell in the notebook to install the required libraries.
 
 ### Task 2: Read through and execute the Summarization notebook
 
-1. Within the Workspace, select the Workspace item in the menu and navigate to the folder where you uploaded the Databricks Archive (which should be [your-name/AI-lab]), and select the notebook called `01 Summarize`. This will open the notebook so you can read and execute the code it contains.
+1. Within the `notebooks` folder, click the notebook called `01 Summarize`. This will open the notebook so you can read and execute the code it contains.
 
-2. Read the instructions at the top of the notebook, and execute the cells as instructed. Remember you can use `SHIFT + ENTER` to execute the currently selected cell, and if you do not have a cluster attached, you will be prompted to attach to the cluster you recently deployed.
+2. Read the instructions at the top of the notebook, and execute the cells as instructed.
 
 ### Task 3: Provision the Azure Machine Learning Workspace and Create the Summarization service
 
-1. From the left-hand menu in your Workspace, select **Clusters**.
+1. Within the `notebooks` folder, click the notebook called `02 Deploy Summarizer Web Service`. This will open the notebook so you can read and execute the code it contains.
 
-   ![The Clusters menu option.](media/image3-4.png 'Clusters')
+2. Read the instructions at the top of the notebook, and execute the cells as instructed.
 
-2. In the list of clusters, select your cluster.
 
-   ![The list of Interactive Clusters.](media/image3-5.png 'Interactive Clusters')
-
-3. Select the **Libraries** tab and then select **Install New**.
-
-   ![The Libraries tab showing the Install New button.](media/image3-6.png 'Install New')
-
-   > **Note**: There are interface updates being deployed, if you do not see the Install New button, instead go to the Azure Databricks menu option in your Workspace (the very top option on the left) and select Import Library. Then select a source of **Upload Python Egg or PyPi** and then provide the Package name specified in the following steps in the PyPi Name text box. Then in the Status on running clusters list, check the checkbox Attach that is listed to the left of your cluster's name to install the library on your cluster. When successful the Status should read `Attached`.
-
-4. In the Library Source, select **PyPi** and in the Package text box type `azureml-sdk[databricks]` and select Create.
-
-   ![The Install Library dialog showing PyPi as the source and azureml-sdk[databricks] as the package.](media/install-azureml-sdk.png 'Install Library')
-
-5. An entry for `azureml-sdk[databricks]` will appear in the list with a status of installing followed by installed. All the other required libraries are installed through the cluster init script you added.
-
-   ![Installed libraries on the cluster.](media/cluster-installed-library.png 'Libraries')
-
-6. Within the Workspace, select the Workspace item in the menu and navigate to the folder where you uploaded the Databricks Archive (which should be [your-name/AI-lab]), and select the notebook called `02 Deploy Summarizer Web Service`. This will open the notebook so you can read and execute the code it contains.
-
-7. Read the instructions at the top of the notebook, and execute the cells as instructed. Remember you can use `SHIFT + ENTER` to execute the currently selected cell, and if you do not have a cluster attached, you will be prompted to attach to the cluster you recently deployed.
-
-   > Pay attention to the top of the notebook where you are asked to ensure the `Azure Machine Learning Python SDK` (`azureml-sdk[databricks]`) is installed. You completed this in steps 3 and 4 above.
-
-## Exercise 3: Create and Deploy a TensorFlow Model
+## Exercise 3: Create and Deploy a Keras Model
 
 Duration: 60 minutes
 
-In this exercise, you will use TensorFlow to construct and train a simple deep neural network classification model that will classify claim text as belonging to a home insurance claim or an automobile claim. You will then deploy this trained model as a web service.
+In this exercise, you will use Keras to construct and train a simple deep neural network classification model that will classify claim text as belonging to a home insurance claim or an automobile claim. You will then deploy this trained model as a web service.
 
-### Task 1: Create a simple TensorFlow based model
+### Task 1: Create a simple Keras based model
 
-1. Within the Workspace, select the Workspace item in the menu and navigate to the folder where you uploaded the Databricks Archive (which should be [your-name/AI-lab]), and select the notebook called `03 Claim Classification`. This will open the notebook so you can read and execute the code it contains.
+1. Within the `notebooks` folder, click the notebook called `03 Claim Classification`. This will open the notebook so you can read and execute the code it contains.
 
-2. Read the instructions at the top of the notebook, and execute the cells as instructed. Remember you can use `SHIFT + ENTER` to execute the currently selected cell, and if you do not have a cluster attached, you will be prompted to attach to the cluster you recently deployed.
+2. Read the instructions at the top of the notebook, and execute the cells as instructed.
 
-   > Pay attention to the top of the notebook where you are asked to ensure the `tensorflow` and `tflearn` libraries are installed. If you are running this lab in a hosted environment, they will already be installed. Otherwise, follow the posted instructions to install the libraries, ensuring they are installed and attached to your cluster before you run the cells in the notebook.
+   >**Note**: Pay attention to the top of the notebook and check the version of  `tensorflow` and `keras` libraries. Tensorflow version should be >= 1.12.2 and Keras version should be >= 2.2.4.
 
-### Task 2: Deploy the TensorFlow model
+### Task 2: Deploy the Keras model
 
-1. Within the Workspace, select the Workspace item in the menu and navigate to the folder where you uploaded the Databricks Archive (which should be [your-name/AI-lab]), and select the notebook called `04 Deploy Classifier Web Service`. This will open the notebook so you can read and execute the code it contains.
+1. Within the `notebooks` folder, click the notebook called `04 Deploy Classifier Web Service`. This will open the notebook so you can read and execute the code it contains.
 
-2. Read the instructions at the top of the notebook, and execute the cells as instructed. Remember you can use `SHIFT + ENTER` to execute the currently selected cell, and if you do not have a cluster attached, you will be prompted to attach to the cluster you recently deployed.
+2. Read the instructions at the top of the notebook, and execute the cells as instructed.
+
 
 ## Exercise 4: Completing the solution
 
@@ -331,7 +233,10 @@ In this exercise, you will perform the final integration with the Computer Visio
 
 ### Task 3: Completing the solution
 
-1. Return to your Azure Databricks Workspace. Select the Workspace item in the menu and navigate to the folder where you uploaded the Databricks Archive (which should be [your-name/AI-lab]), and select the notebook called `05 Cognitive Services`. Follow the steps within the notebook to complete the lab and view the result of combining Cognitive Services with your Azure Machine Learning Services.
+1. Return to your Azure Notebooks Project. Within the `notebooks` folder, click the notebook called `05 Cognitive Services`. This will open the notebook so you can read and execute the code it contains.
+
+2. Follow the steps within the notebook to complete the lab and view the result of combining Cognitive Services with your Azure Machine Learning Services.
+
 
 ## After the hands-on lab
 
