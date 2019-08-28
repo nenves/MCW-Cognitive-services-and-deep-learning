@@ -110,7 +110,7 @@ In this exercise, you will create and deploy a web service that uses a pre-train
 
 ### Task 1: Install libraries
 
-The notebooks you will run depends on certain Python libraries like `azureml-sdk`, `onnxruntime` and `nltk` that will need to be installed. The following steps walk you through adding these dependencies.
+The notebooks you will run depends on certain Python libraries like `NLTK`. The `NLTK` library has built-in support for dozens of corpora and trained models that need to be installed using the corpus downloader. The following steps walk you through adding these dependencies.
 
 1.  Within the `notebooks` folder, click the notebook called `00 init`. This will open the notebook so you can read and execute the code it contains.
 
