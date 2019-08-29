@@ -185,13 +185,10 @@ In this exercise, you will perform the final integration with the Computer Visio
 
     ![A Deployment succeeded notification displays.](media/image61.png 'Notification')
 
-7.  Select **Keys** and then copy the value of **Key 1** into notepad or something similar as you will need this value later in the lab.
+7.  Select **Quick start** and then copy the value of **Key 1** and **Endpoint** into notepad or something similar as you will need this value later in the lab.
 
-    ![In the Cognitive Services blade, under Resource Management, Keys is selected. ](media/image62.png 'Cognitive Services blade')
-
-8.  Select **Overview** and copy the value of Endpoint from the Essentials panel. Store this value in notepad or something similar as you will need this value later in the lab.
-
-    ![In the Cognitive Services blade, the Endpoint URL is selected.](media/image63.png 'Cognitive Services blade')
+    ![In the Cognitive Services blade, under Resource Management, Quick start is selected. ](media/image62.png 'Cognitive Services blade')
+    
 
 ### Task 2: Deploy the Text Analytics API
 
@@ -223,13 +220,9 @@ In this exercise, you will perform the final integration with the Computer Visio
 
     ![A Deployment succeeded notification displays.](media/image66.png 'Notification')
 
-7.  Select **Keys**, and then copy the value of **Key 1** into notepad or something similar as you will need this value later in the lab.
+7.  Select **Quick start** and then copy the value of **Key 1** and **Endpoint** into notepad or something similar as you will need this value later in the lab.
 
-    ![In the Cognitive Services blade, under Resource Management, Keys is selected. ](media/image67.png 'Cognitive Services blade')
-
-8.  Select **Overview** and copy the value of Endpoint from the Essentials panel. Store this value in notepad or something similar as you will need this value later in the lab.
-
-    ![In the Cognitive Services blade, the Endpoint URL is selected.](media/image68.png 'Cognitive Services blade')
+    ![In the Cognitive Services blade, under Resource Management, Quick start is selected. ](media/image67.png 'Cognitive Services blade')
 
 ### Task 3: Completing the solution
 
