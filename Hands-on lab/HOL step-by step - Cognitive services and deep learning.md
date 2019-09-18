@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-June 2019
+September 2019
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -21,8 +21,6 @@ The names of manufacturers, products, or URLs are provided for informational pur
 © 2019 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are the property of their respective owners.
-
-# Cognitive services and deep learning hands-on lab step-by-step
 
 **Contents**
 
@@ -47,6 +45,8 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Task 3: Completing the solution](#task-3-completing-the-solution)
   - [After the hands-on lab](#after-the-hands-on-lab)
     - [Task 1: Clean up lab resources](#task-1-clean-up-lab-resources)
+
+# Cognitive services and deep learning hands-on lab step-by-step
 
 ## Abstract and learning objectives
 
@@ -86,9 +86,9 @@ In this exercise, you will setup your Azure Notebooks Project.
 
 3.  Select **Upload GitHub Repo**.
 
-4. In the Upload GitHub Repository dialog, for the GitHub repository provide **`https://github.com/shirolkar/MCW-Cognitive-services-and-deep-learning.git`** and select **Import**. Allow the import a few moments to complete, the dialog will dismiss once the import has completed. (TODO: the link in Step 4 needs to be updated once the pull request is updated and merged. For now, please use the link in Step 4 to import the GitHub repo from the fork and ignore the link shown in the image below.)
+4. In the Upload GitHub Repository dialog, for the GitHub repository provide **`https://github.com/microsoft/MCW-Cognitive-services-and-deep-learning.git`** and select **Import**. Allow the import a few moments to complete, the dialog will dismiss once the import has completed.
 	
-	![Upload GitHub Repository](images/az_nb_setup/01.png 'Upload GitHub Repository dialog box')
+	![In the dialog the GitHub URL to upload the project repository is shown.](images/az_nb_setup/01.png 'Upload GitHub Repository dialog box')
 
 ### Task 2: Start the Notebook Server
 
@@ -96,11 +96,11 @@ In this exercise, you will setup your Azure Notebooks Project.
 
 2. Start your Notebook server on `Free Compute` by clicking on the **Play** icon in the toolbar as shown:
 
-	![Start Notebook Server](images/az_nb_setup/02.png 'Start Notebook Server Icon')
+	![The image shows the Start Notebook Server Icon and highlights the area to select.](images/az_nb_setup/02.png 'Start Notebook Server Icon')
 
-3.  Navigate to the `> MCW-Cognitive-services-and-deep-learning > Hands-on lab > notebooks` folder where you will find all your labfiles.
+3.  Navigate to the `> MCW-Cognitive-services-and-deep-learning > Hands-on lab > notebooks` folder where you will find all your lab files.
 
-	![Navigate to the notebooks folder](images/az_nb_setup/03.png 'Navigate to the notebooks folder')
+	![Jupyter notebook interface showing the folder where the lab files are present.](images/az_nb_setup/03.png 'Jupyter Notebooks Folder')
 	
 ## Exercise 2: Create and Deploy an Unsupervised Model
 
@@ -110,21 +110,21 @@ In this exercise, you will create and deploy a web service that uses a pre-train
 
 ### Task 1: Install libraries
 
-The notebooks you will run depends on certain Python libraries like `azureml-sdk`, `onnxruntime` and `nltk` that will need to be installed. The following steps walk you through adding these dependencies.
+The notebooks you will run depends on certain Python libraries like `NLTK.` The `NLTK` library has built-in support for dozens of corpora and trained models that need to be installed using the corpus downloader. The following steps walk you through adding these dependencies.
 
-1.  Within the `notebooks` folder, click the notebook called `00 init`. This will open the notebook so you can read and execute the code it contains.
+1.  Within the `notebooks` folder, select the notebook called `00 init`. This will open the notebook so you can read and execute the code it contains.
 
 2.  Run each cell in the notebook to install the required libraries.
 
 ### Task 2: Read through and execute the Summarization notebook
 
-1. Within the `notebooks` folder, click the notebook called `01 Summarize`. This will open the notebook so you can read and execute the code it contains.
+1. Within the `notebooks` folder, select the notebook called `01 Summarize`. This will open the notebook so you can read and execute the code it contains.
 
 2. Read the instructions at the top of the notebook, and execute the cells as instructed.
 
 ### Task 3: Provision the Azure Machine Learning Workspace and Create the Summarization service
 
-1. Within the `notebooks` folder, click the notebook called `02 Deploy Summarizer Web Service`. This will open the notebook so you can read and execute the code it contains.
+1. Within the `notebooks` folder, sekect the notebook called `02 Deploy Summarizer Web Service`. This will open the notebook so you can read and execute the code it contains.
 
 2. Read the instructions at the top of the notebook, and execute the cells as instructed.
 
@@ -137,7 +137,7 @@ In this exercise, you will use Keras to construct and train a simple deep neural
 
 ### Task 1: Create a simple Keras based model
 
-1. Within the `notebooks` folder, click the notebook called `03 Claim Classification`. This will open the notebook so you can read and execute the code it contains.
+1. Within the `notebooks` folder, select the notebook called `03 Claim Classification`. This will open the notebook so you can read and execute the code it contains.
 
 2. Read the instructions at the top of the notebook, and execute the cells as instructed.
 
@@ -145,7 +145,7 @@ In this exercise, you will use Keras to construct and train a simple deep neural
 
 ### Task 2: Deploy the Keras model
 
-1. Within the `notebooks` folder, click the notebook called `04 Deploy Classifier Web Service`. This will open the notebook so you can read and execute the code it contains.
+1. Within the `notebooks` folder, select the notebook called `04 Deploy Classifier Web Service`. This will open the notebook so you can read and execute the code it contains.
 
 2. Read the instructions at the top of the notebook, and execute the cells as instructed.
 
@@ -185,13 +185,10 @@ In this exercise, you will perform the final integration with the Computer Visio
 
     ![A Deployment succeeded notification displays.](media/image61.png 'Notification')
 
-7.  Select **Keys** and then copy the value of **Key 1** into notepad or something similar as you will need this value later in the lab.
+7.  Select **Quick start** and then copy the value of **Key 1** and **Endpoint** into notepad or something similar as you will need this value later in the lab.
 
-    ![In the Cognitive Services blade, under Resource Management, Keys is selected. ](media/image62.png 'Cognitive Services blade')
-
-8.  Select **Overview** and copy the value of Endpoint from the Essentials panel. Store this value in notepad or something similar as you will need this value later in the lab.
-
-    ![In the Cognitive Services blade, the Endpoint URL is selected.](media/image63.png 'Cognitive Services blade')
+    ![In the Cognitive Services blade, under Resource Management, Quick start is selected. ](media/image62.png 'Cognitive Services blade')
+    
 
 ### Task 2: Deploy the Text Analytics API
 
@@ -223,17 +220,13 @@ In this exercise, you will perform the final integration with the Computer Visio
 
     ![A Deployment succeeded notification displays.](media/image66.png 'Notification')
 
-7.  Select **Keys**, and then copy the value of **Key 1** into notepad or something similar as you will need this value later in the lab.
+7.  Select **Quick start** and then copy the value of **Key 1** and **Endpoint** into notepad or something similar as you will need this value later in the lab.
 
-    ![In the Cognitive Services blade, under Resource Management, Keys is selected. ](media/image67.png 'Cognitive Services blade')
-
-8.  Select **Overview** and copy the value of Endpoint from the Essentials panel. Store this value in notepad or something similar as you will need this value later in the lab.
-
-    ![In the Cognitive Services blade, the Endpoint URL is selected.](media/image68.png 'Cognitive Services blade')
+    ![In the Cognitive Services blade, under Resource Management, Quick start is selected. ](media/image67.png 'Cognitive Services blade')
 
 ### Task 3: Completing the solution
 
-1. Return to your Azure Notebooks Project. Within the `notebooks` folder, click the notebook called `05 Cognitive Services`. This will open the notebook so you can read and execute the code it contains.
+1. Return to your Azure Notebooks Project. Within the `notebooks` folder, select the notebook called `05 Cognitive Services`. This will open the notebook so you can read and execute the code it contains.
 
 2. Follow the steps within the notebook to complete the lab and view the result of combining Cognitive Services with your Azure Machine Learning Services.
 
