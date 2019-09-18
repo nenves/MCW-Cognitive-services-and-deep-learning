@@ -22,9 +22,9 @@ The names of manufacturers, products, or URLs are provided for informational pur
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are the property of their respective owners.
 
-# Cognitive services and deep learning whiteboard design session trainer guide
-
 **Contents**
+
+<!-- TOC -->
 
 - [Trainer information](#trainer-information)
   - [Role of the trainer](#role-of-the-trainer)
@@ -51,6 +51,8 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
   - [Preferred solution](#preferred-solution)
   - [Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
   - [Customer quote (to be read back to the attendees at the end)](#customer-quote-to-be-read-back-to-the-attendees-at-the-end)
+
+<!-- /TOC -->
 
 # Trainer information
 
@@ -164,7 +166,7 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 **Wait for responses**. If you ask a question such as, "What's your experience with (fill in the blank)?" then wait. Do not be afraid of a little silence. If you leap into the silence, your participants will feel you are not serious about involving them and will become passive. Give participants a chance to think, and if no one answers, patiently ask again. You will usually get a response.
 
-#  Cognitive services and deep learning whiteboard design session student guide
+# Cognitive services and deep learning whiteboard design session student guide
 
 ## Abstract and learning objectives 
 
@@ -628,6 +630,6 @@ _Enabling search_
 
 ## Customer quote (to be read back to the attendees at the end)
 
-*"We are excited by the possibilities made real when we use AI to amplify the capabilities of our agents."*
+"We are excited by the possibilities made real when we use AI to amplify the capabilities of our agents."
 
 Francine Fischer, CIO of Contoso Ltd.
