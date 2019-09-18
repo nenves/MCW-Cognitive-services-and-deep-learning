@@ -22,8 +22,6 @@ The names of manufacturers, products, or URLs are provided for informational pur
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are the property of their respective owners.
 
-# Cognitive services and deep learning hands-on lab step-by-step
-
 **Contents**
 
 - [Cognitive services and deep learning hands-on lab step-by-step](#cognitive-services-and-deep-learning-hands-on-lab-step-by-step)
@@ -47,6 +45,8 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Task 3: Completing the solution](#task-3-completing-the-solution)
   - [After the hands-on lab](#after-the-hands-on-lab)
     - [Task 1: Clean up lab resources](#task-1-clean-up-lab-resources)
+
+# Cognitive services and deep learning hands-on lab step-by-step
 
 ## Abstract and learning objectives
 
@@ -112,19 +112,19 @@ In this exercise, you will create and deploy a web service that uses a pre-train
 
 The notebooks you will run depends on certain Python libraries like `NLTK.` The `NLTK` library has built-in support for dozens of corpora and trained models that need to be installed using the corpus downloader. The following steps walk you through adding these dependencies.
 
-1.  Within the `notebooks` folder, click the notebook called `00 init`. This will open the notebook so you can read and execute the code it contains.
+1.  Within the `notebooks` folder, select the notebook called `00 init`. This will open the notebook so you can read and execute the code it contains.
 
 2.  Run each cell in the notebook to install the required libraries.
 
 ### Task 2: Read through and execute the Summarization notebook
 
-1. Within the `notebooks` folder, click the notebook called `01 Summarize`. This will open the notebook so you can read and execute the code it contains.
+1. Within the `notebooks` folder, select the notebook called `01 Summarize`. This will open the notebook so you can read and execute the code it contains.
 
 2. Read the instructions at the top of the notebook, and execute the cells as instructed.
 
 ### Task 3: Provision the Azure Machine Learning Workspace and Create the Summarization service
 
-1. Within the `notebooks` folder, click the notebook called `02 Deploy Summarizer Web Service`. This will open the notebook so you can read and execute the code it contains.
+1. Within the `notebooks` folder, sekect the notebook called `02 Deploy Summarizer Web Service`. This will open the notebook so you can read and execute the code it contains.
 
 2. Read the instructions at the top of the notebook, and execute the cells as instructed.
 
@@ -137,7 +137,7 @@ In this exercise, you will use Keras to construct and train a simple deep neural
 
 ### Task 1: Create a simple Keras based model
 
-1. Within the `notebooks` folder, click the notebook called `03 Claim Classification`. This will open the notebook so you can read and execute the code it contains.
+1. Within the `notebooks` folder, select the notebook called `03 Claim Classification`. This will open the notebook so you can read and execute the code it contains.
 
 2. Read the instructions at the top of the notebook, and execute the cells as instructed.
 
@@ -145,7 +145,7 @@ In this exercise, you will use Keras to construct and train a simple deep neural
 
 ### Task 2: Deploy the Keras model
 
-1. Within the `notebooks` folder, click the notebook called `04 Deploy Classifier Web Service`. This will open the notebook so you can read and execute the code it contains.
+1. Within the `notebooks` folder, select the notebook called `04 Deploy Classifier Web Service`. This will open the notebook so you can read and execute the code it contains.
 
 2. Read the instructions at the top of the notebook, and execute the cells as instructed.
 
@@ -226,7 +226,7 @@ In this exercise, you will perform the final integration with the Computer Visio
 
 ### Task 3: Completing the solution
 
-1. Return to your Azure Notebooks Project. Within the `notebooks` folder, click the notebook called `05 Cognitive Services`. This will open the notebook so you can read and execute the code it contains.
+1. Return to your Azure Notebooks Project. Within the `notebooks` folder, select the notebook called `05 Cognitive Services`. This will open the notebook so you can read and execute the code it contains.
 
 2. Follow the steps within the notebook to complete the lab and view the result of combining Cognitive Services with your Azure Machine Learning Services.
 
